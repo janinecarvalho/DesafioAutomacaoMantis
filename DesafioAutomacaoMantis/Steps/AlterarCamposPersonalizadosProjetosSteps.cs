@@ -69,8 +69,8 @@ namespace DesafioAutomacaoMantis.Steps
             AlterarCamposPersonalizadosProjetosPage.DesmarcarOCheckboxFechamento();
         }
 
-        [StepDefinition(@"vizualizar a alteracao do campo personalizado no banco")]
-        public void ThenVizualizarAAlteracaoDoCampoPersonalizadoNoBanco()
+        [StepDefinition(@"visualizar a alteracao do campo personalizado no banco")]
+        public void ThenVisualizarAAlteracaoDoCampoPersonalizadoNoBanco()
         {
             Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD("mantis_custom_field_table", "name", "PipelinejanineOLD"));
         }

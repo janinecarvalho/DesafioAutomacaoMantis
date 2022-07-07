@@ -17,7 +17,7 @@ namespace DesafioAutomacaoMantis.Hooks
         public static void BeforeFeature()
         {
             ExtentReportHelpers.CreateFeature();
-            ManageDBSteps.DeleteUserDB(JsonBuilder.GetAppSettings("USER"));
+            ManageDBSteps.DeleteUserDB("administrator");
             ManageDBSteps.InsertUserDB(JsonBuilder.GetAppSettings("USER"), JsonBuilder.GetAppSettings("PASSWORD_HASH"));
             ManageDBSteps.InserirMassaDB();
         }

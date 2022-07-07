@@ -13,7 +13,7 @@ Scenario: Alteracao de tarefa
 	And selecionar o campo estado
 	And selecionar o campo resolucao
 	When clicar no botao atualizar informacao
-	Then vizualizar a alteracao da tarefa no banco
+	Then visualizar a alteracao da tarefa no banco
 
 
 Scenario: Alteracao de tarefa java script
@@ -28,4 +28,4 @@ Scenario: Alteracao de tarefa java script
 	And selecionar o campo estado
 	And selecionar o campo resolucao
 	When clicar com java script no botao atualizar informacao
-	Then vizualizar a alteracao da tarefa no banco
+	Then visualizar a alteracao da tarefa no banco

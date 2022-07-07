@@ -10,7 +10,7 @@ Scenario: Cadastro de perfis globais
 	And preencher o campo versao so
 	And preencher o campo descricao adicional
 	When clicar no botao adicionar perfil
-	Then vizualizar a inclusao de perfil
+	Then visualizar a inclusao de perfil
 
 
 Scenario: Cadastro de perfis globais java script
@@ -22,4 +22,4 @@ Scenario: Cadastro de perfis globais java script
 	And preencher com java scrip o campo versao so
 	And preencher com java scrip o campo descricao adicional
 	When clicar com java scrip no botao adicionar perfil
-	Then vizualizar a inclusao de perfil
+	Then visualizar a inclusao de perfil

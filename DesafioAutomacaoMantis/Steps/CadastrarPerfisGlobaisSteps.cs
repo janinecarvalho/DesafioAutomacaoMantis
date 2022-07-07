@@ -51,8 +51,8 @@ namespace DesafioAutomacaoMantis.Steps
             cadastrarPerfisGlobaisPage.ClicarNoBotaoAdicionarPerfil();
         }
 
-        [StepDefinition(@"vizualizar a inclusao de perfil")]
-        public void ThenVizualizarAInclusaoDePerfil()
+        [StepDefinition(@"visualizar a inclusao de perfil")]
+        public void ThenVisualizarAInclusaoDePerfil()
         {
             Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD("mantis_user_profile_table", "platform", "Web"));
         }

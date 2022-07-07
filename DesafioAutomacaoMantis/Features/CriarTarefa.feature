@@ -17,7 +17,7 @@ Scenario: Criar tarefa
 	And preencher o campo aplicar marcadores
 	And marcar o check continuar relatando
 	When clicar no botao criar nova tarefa
-	Then vizualizar a inclusao da tarefa no banco
+	Then visualizar a inclusao da tarefa no banco
 
 
 Scenario: Criar tarefa java script
@@ -36,4 +36,4 @@ Scenario: Criar tarefa java script
 	And preencher com java script o campo aplicar marcadores
 	And marcar o check continuar relatando
 	When clicar com java script no botao criar nova tarefa
-	Then vizualizar a inclusao da tarefa no banco
+	Then visualizar a inclusao da tarefa no banco

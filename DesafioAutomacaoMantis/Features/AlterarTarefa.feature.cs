@@ -126,7 +126,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("clicar no botao atualizar informacao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 16
- testRunner.Then("vizualizar a alteracao da tarefa no banco", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("visualizar a alteracao da tarefa no banco", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -183,7 +183,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("clicar com java script no botao atualizar informacao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 31
- testRunner.Then("vizualizar a alteracao da tarefa no banco", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("visualizar a alteracao da tarefa no banco", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

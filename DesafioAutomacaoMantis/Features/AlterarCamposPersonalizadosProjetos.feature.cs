@@ -153,7 +153,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("clicar no botao atualizar campo personalizado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 25
- testRunner.Then("vizualizar a alteracao do campo personalizado no banco", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("visualizar a alteracao do campo personalizado no banco", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -237,7 +237,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("clicar no botao atualizar campo personalizado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 49
- testRunner.Then("vizualizar a alteracao do campo personalizado no banco", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("visualizar a alteracao do campo personalizado no banco", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

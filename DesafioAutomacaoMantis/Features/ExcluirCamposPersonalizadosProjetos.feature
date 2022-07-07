@@ -8,7 +8,7 @@ Scenario: Exclusao de campos personalizados
 	And clicar no campo personalizado para excluir
 	And clicar no botao apagar campo personalizado
 	When clicar no botao apagar campo
-	Then vizualizar a exclusao do campo personalizado no banco
+	Then visualizar a exclusao do campo personalizado no banco
 
 
 Scenario: Exclusao de campos personalizados java script
@@ -18,4 +18,4 @@ Scenario: Exclusao de campos personalizados java script
 	And clicar com java script no campo personalizado para excluir
 	And clicar com java script no botao apagar campo personalizado
 	When clicar com java script no botao apagar campo
-	Then vizualizar a exclusao do campo personalizado no banco
+	Then visualizar a exclusao do campo personalizado no banco

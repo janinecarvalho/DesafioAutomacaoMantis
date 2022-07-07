@@ -122,8 +122,8 @@ namespace DesafioAutomacaoMantis.Steps
             CadastrarCamposPersonalizadosProjetosPage.ClicarNoBotaoAtualizarCampoPersonalizado();
         }
 
-        [Then(@"vizualizar a inclusao do campo personalizado no banco")]
-        public void ThenVizualizarAInclusaoDoCampoPersonalizadoNoBanco()
+        [Then(@"visualizar a inclusao do campo personalizado no banco")]
+        public void ThenVisualizarAInclusaoDoCampoPersonalizadoNoBanco()
         {
             Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD("mantis_user_profile_table", "description", "Projeto Desafio Automacao Base2 - Selenium Specflow .NetCore."));
         }

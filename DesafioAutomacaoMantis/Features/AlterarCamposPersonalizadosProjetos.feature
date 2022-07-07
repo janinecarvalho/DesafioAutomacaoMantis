@@ -22,7 +22,7 @@ Scenario: Alteracao de campo personalizado
 	And desmarcar o checkbox resolucao
 	And desmarcar o checkbox fechamento
 	When clicar no botao atualizar campo personalizado
-	Then vizualizar a alteracao do campo personalizado no banco
+	Then visualizar a alteracao do campo personalizado no banco
 
 
 Scenario: Alteracao de campo personalizado java script
@@ -46,4 +46,4 @@ Scenario: Alteracao de campo personalizado java script
 	And desmarcar o checkbox resolucao
 	And desmarcar o checkbox fechamento
 	When clicar no botao atualizar campo personalizado
-	Then vizualizar a alteracao do campo personalizado no banco
+	Then visualizar a alteracao do campo personalizado no banco

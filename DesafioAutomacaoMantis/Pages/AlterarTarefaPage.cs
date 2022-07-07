@@ -1,4 +1,5 @@
 ﻿using DesafioAutomacaoMantis.Bases;
+using DesafioAutomacaoMantis.DataBaseSteps;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,12 @@ namespace DesafioAutomacaoMantis.Pages
         By comboResolucao = By.Id("resolution");
         By btnAtualizarInformacao = By.CssSelector("input[value='Atualizar Informação']");
         By btnHistorico = By.CssSelector("a[href='#history']");
+        By txtPesquisarTarefa = By.Name("bug_id");
+        By painelNumeroTarefa = By.XPath("//*[@class='table table-bordered table-condensed']//*[@class='bug-id']");
+        By btnEnviarLembrete = By.XPath("//*[@id='main-container']//*[contains(text(),'Enviar um lembrete')]");
+        By comboDestinatario = By.Id("recipient");
+        By textAreaLembrete = By.Name("body");
+        By btnEnviar = By.XPath("//*[@value='Enviar']");
 
         #endregion
 
@@ -68,10 +75,52 @@ namespace DesafioAutomacaoMantis.Pages
         {
             return ReturnIfElementIsDisplayed(btnHistorico);
         }
+
+        public void PreencherOCampoTarefa(string numeroTarefa)
+        {
+            SendKeys(txtPesquisarTarefa, numeroTarefa);
+        }
+
+        public void ApertarATeclaEnter()
+        {
+            EnterKeyBoardAction(txtPesquisarTarefa);
+        }
+
+        public string VisualizarONumeroDaTarefa()
+        {
+            return GetText(painelNumeroTarefa);
+        }
+
+        public void ClicarNoBotaoEnviarUmLembrete()
+        {
+            Click(btnEnviarLembrete);
+        }
+
+        public void SelecionarODestinatario(string destinatario)
+        {
+            ComboBoxSelectByVisibleText(comboDestinatario, destinatario);
+        }
+
+        public void PreencherOTextoDoLembrete(string textoLembrete)
+        {
+            SendKeys(textAreaLembrete, textoLembrete);
+        }
+
+        public void ClicarNoBotaoEnviarLembrete()
+        {
+            Click(btnEnviar);
+        }
+
+        public bool VisualizarAInclusaoDoLembreteNoBanco(string value)
+        {
+            return ManageDBSteps.ValidarInclusaoAlteracaoBD("mantis_bugnote_text_table", "note", value);
+        }
+
         public void ClicarComJavaScriptNoBotaoVerTarefas()
         {
             ClickJavaScript(btnVerTarefas);
         }
+
         public void ClicarComJavaScriptNoBotaoAtualizar()
         {
             ClickJavaScript(btnEditar);

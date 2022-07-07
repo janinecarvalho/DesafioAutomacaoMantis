@@ -32,8 +32,8 @@ namespace DesafioAutomacaoMantis.Steps
             excluirCamposPersonalizadosPage.ClicarNoBotaoApagarCampo();
         }
 
-        [StepDefinition(@"vizualizar a exclusao do campo personalizado no banco")]
-        public void ThenVizualizarAExclusaoDoCampoPersonalizadoNoBanco()
+        [StepDefinition(@"visualizar a exclusao do campo personalizado no banco")]
+        public void ThenVisualizarAExclusaoDoCampoPersonalizadoNoBanco()
         {
             Assert.IsTrue(ManageDBSteps.ValidarExclusaoBD("mantis_custom_field_table", "id", "2"));
         }

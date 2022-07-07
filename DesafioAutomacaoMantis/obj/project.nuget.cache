@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oee6fpQNTzo806h+ksPPs8knK+6vMUIHxnZ7azSIhmthL8okkrq8A39xHIEvCnDiHeCzLtHoXUZVzxmM+U9X3g==",
+  "dgSpecHash": "ELaMV2PRYycS9t7nOKBhzGK5DFeko/puNojUbyRfOpOEIkBSTWxfBiie2xeoRFxmShZOEJ4/QE/il0qIK4hugw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\janin\\Desktop\\DesafioAutomacaoMantis\\DesafioAutomacaoMantis\\DesafioAutomacaoMantis.csproj",
+  "projectFilePath": "E:\\Backup\\Repositorio Base2\\DesafioAutomacaoMantis\\DesafioAutomacaoMantis\\DesafioAutomacaoMantis.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\janin\\.nuget\\packages\\bodi\\1.5.0\\bodi.1.5.0.nupkg.sha512",
     "C:\\Users\\janin\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",

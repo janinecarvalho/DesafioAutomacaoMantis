@@ -117,6 +117,11 @@ namespace DesafioAutomacaoMantis.Bases
             throw new Exception("Given element isn't visible");
         }
 
+        protected void EnterKeyBoardAction(By locator)
+        {
+            WaitForElement(locator).SendKeys(Keys.Enter);
+        }
+
         
         protected void SendKeys(By locator, string text)
         {

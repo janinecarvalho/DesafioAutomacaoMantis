@@ -22,7 +22,7 @@ Scenario: Cadastro de campos personalizados
 	And marcar o checkbox resolucao
 	And marcar o checkbox fechamento
 	When clicar no botao atualizar campo personalizado
-	Then vizualizar a inclusao do campo personalizado no banco
+	Then visualizar a inclusao do campo personalizado no banco
 
 
 Scenario: Cadastro de campos personalizados java script
@@ -46,4 +46,4 @@ Scenario: Cadastro de campos personalizados java script
 	And marcar o checkbox resolucao
 	And marcar o checkbox fechamento
 	When clicar com java script no botao atualizar campo personalizado
-	Then vizualizar a inclusao do campo personalizado no banco
+	Then visualizar a inclusao do campo personalizado no banco

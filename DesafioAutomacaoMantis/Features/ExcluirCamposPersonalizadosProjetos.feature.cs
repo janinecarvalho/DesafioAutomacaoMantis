@@ -111,7 +111,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("clicar no botao apagar campo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 11
- testRunner.Then("vizualizar a exclusao do campo personalizado no banco", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("visualizar a exclusao do campo personalizado no banco", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -153,7 +153,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("clicar com java script no botao apagar campo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 21
- testRunner.Then("vizualizar a exclusao do campo personalizado no banco", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("visualizar a exclusao do campo personalizado no banco", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\janin\\Desktop\\DesafioAutomacaoMantis\\DesafioAutomacaoMantis\\DesafioAutomacaoMantis.csproj": {}
+    "E:\\Backup\\Repositorio Base2\\DesafioAutomacaoMantis\\DesafioAutomacaoMantis\\DesafioAutomacaoMantis.csproj": {}
   },
   "projects": {
-    "C:\\Users\\janin\\Desktop\\DesafioAutomacaoMantis\\DesafioAutomacaoMantis\\DesafioAutomacaoMantis.csproj": {
+    "E:\\Backup\\Repositorio Base2\\DesafioAutomacaoMantis\\DesafioAutomacaoMantis\\DesafioAutomacaoMantis.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\janin\\Desktop\\DesafioAutomacaoMantis\\DesafioAutomacaoMantis\\DesafioAutomacaoMantis.csproj",
+        "projectUniqueName": "E:\\Backup\\Repositorio Base2\\DesafioAutomacaoMantis\\DesafioAutomacaoMantis\\DesafioAutomacaoMantis.csproj",
         "projectName": "DesafioAutomacaoMantis",
-        "projectPath": "C:\\Users\\janin\\Desktop\\DesafioAutomacaoMantis\\DesafioAutomacaoMantis\\DesafioAutomacaoMantis.csproj",
+        "projectPath": "E:\\Backup\\Repositorio Base2\\DesafioAutomacaoMantis\\DesafioAutomacaoMantis\\DesafioAutomacaoMantis.csproj",
         "packagesPath": "C:\\Users\\janin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\janin\\Desktop\\DesafioAutomacaoMantis\\DesafioAutomacaoMantis\\obj\\",
+        "outputPath": "E:\\Backup\\Repositorio Base2\\DesafioAutomacaoMantis\\DesafioAutomacaoMantis\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

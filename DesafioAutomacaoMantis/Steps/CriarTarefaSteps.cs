@@ -98,8 +98,8 @@ namespace DesafioAutomacaoMantis.Steps
             criarTarefaPage.ClicarNoBotaoCriarNovaTarefa();
         }
        
-        [StepDefinition(@"vizualizar a inclusao da tarefa no banco")]
-        public void ThenVizualizarAInclusaoDaTarefaNoBanco()
+        [StepDefinition(@"visualizar a inclusao da tarefa no banco")]
+        public void ThenVisualizarAInclusaoDaTarefaNoBanco()
         {
             Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD("mantis_bug_table", "summary", "DesafioB2"));
         }

@@ -138,7 +138,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("clicar no botao criar nova tarefa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 20
- testRunner.Then("vizualizar a inclusao da tarefa no banco", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("visualizar a inclusao da tarefa no banco", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -207,7 +207,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("clicar com java script no botao criar nova tarefa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 39
- testRunner.Then("vizualizar a inclusao da tarefa no banco", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("visualizar a inclusao da tarefa no banco", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

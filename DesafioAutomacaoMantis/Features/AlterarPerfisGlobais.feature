@@ -13,7 +13,7 @@ Scenario: Alteracao de perfis globais
 	And preencher o campo versao so atualizado
 	And preencher o campo descricao adicional atualizado
 	When clicar no botao atualizar perfil
-	Then vizualizar a alteracao do perfil no banco
+	Then visualizar a alteracao do perfil no banco
 
 
 Scenario: Alteracao de perfis globais java script
@@ -28,4 +28,4 @@ Scenario: Alteracao de perfis globais java script
 	And preencher com java script o campo versao so atualizado
 	And preencher com java script o campo descricao adicional atualizado
 	When clicar com java script no botao atualizar perfil
-	Then vizualizar a alteracao do perfil no banco
+	Then visualizar a alteracao do perfil no banco

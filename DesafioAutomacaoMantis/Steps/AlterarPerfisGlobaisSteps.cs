@@ -62,8 +62,8 @@ namespace DesafioAutomacaoMantis.Steps
             alterarPerfisGlobaisPage.ClicarNoBotaoAtualizarPerfil();
         }
 
-        [StepDefinition(@"vizualizar a alteracao do perfil no banco")]
-        public void ThenVizualizarAAlteracaoDoPerfilNoBanco()
+        [StepDefinition(@"visualizar a alteracao do perfil no banco")]
+        public void ThenVisualizarAAlteracaoDoPerfilNoBanco()
         {
             Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD("mantis_user_profile_table", "description", "Projeto Desafio Automacao Base2 - Selenium Specflow .NetCore. [Atualizado]"));
         }

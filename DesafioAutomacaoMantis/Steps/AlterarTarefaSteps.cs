@@ -79,8 +79,8 @@ namespace DesafioAutomacaoMantis.Steps
             alterarTarefaPage.ClicarNoBotaoAtualizarInformacao();
         }
 
-        [Then(@"vizualizar a alteracao da tarefa no banco")]
-        public void ThenVizualizarAAlteracaoDaTarefaNoBanco()
+        [Then(@"visualizar a alteracao da tarefa no banco")]
+        public void ThenVisualizarAAlteracaoDaTarefaNoBanco()
         {
             Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD("mantis_bug_table", "status", "10"));
         }
