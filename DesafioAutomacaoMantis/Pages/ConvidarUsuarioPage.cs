@@ -42,11 +42,35 @@ namespace DesafioAutomacaoMantis.Pages
             Click(btnCriarUsuario);
         }
 
+        public void ClicarComJavaScriptNoBotaoConvidarUsuarios()
+        {
+            ClickJavaScript(btnConvidarUsuario);
+        }
+
+        public void PreencherComJavaScriptOCampoNomeDoUsuario(string nomeUsuario)
+        {
+            SendKeysJavaScript(txtNomeUsuario, nomeUsuario);
+        }
+
+        public void PreencherComJavaScriptOCampoNomeVerdadeiro(string nomeVerdadeiro)
+        {
+            SendKeysJavaScript(txtNomeVerdadeiro, nomeVerdadeiro);
+        }
+
+        public void PreencherComJavaScriptOCampoEmailDoUsuario(string emailUsuario)
+        {
+            SendKeysJavaScript(txtEmail, emailUsuario);
+        }
+
+        public void ClicarComJavaScriptNoBotaoCriarUsuario()
+        {
+            ClickJavaScript(btnCriarUsuario);
+        }
+
         public bool VizualizarAInclusaoDoUsuarioNoBanco(string usuario)
         {
             return ManageDBSteps.ValidarInclusaoUsuarioDB(usuario);
         }
-
         #endregion
     }
 }

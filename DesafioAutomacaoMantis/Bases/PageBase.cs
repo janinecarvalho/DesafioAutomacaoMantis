@@ -122,7 +122,14 @@ namespace DesafioAutomacaoMantis.Bases
             WaitForElement(locator).SendKeys(Keys.Enter);
         }
 
-        
+        protected void MoveMouseToElement(By locator)
+        {
+            Actions action = new Actions(driver);
+            action.MoveToElement(WaitForElementNotClickable(locator)).Perform();
+            //return element;
+        }
+
+
         protected void SendKeys(By locator, string text)
         {
             WaitForElement(locator).SendKeys(text);

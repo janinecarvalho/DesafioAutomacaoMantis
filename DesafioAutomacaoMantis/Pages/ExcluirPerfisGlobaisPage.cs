@@ -15,7 +15,6 @@ namespace DesafioAutomacaoMantis.Pages
         {
             ClickCheckBoxAndRadioBoxJavaScript(radioApagarPerfil);
         }
-
         #endregion
     }
 }

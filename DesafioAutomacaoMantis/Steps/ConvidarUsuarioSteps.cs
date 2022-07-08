@@ -45,7 +45,37 @@ namespace DesafioAutomacaoMantis.Steps
         {
             convidarUsuarioPage.ClicarNoBotaoCriarUsuario();
         }
-        
+
+        [StepDefinition(@"clicar com java script no botao convidar usuarios")]
+        public void GivenClicarComJavaScriptNoBotaoConvidarUsuarios()
+        {
+            convidarUsuarioPage.ClicarComJavaScriptNoBotaoConvidarUsuarios();
+        }
+
+        [StepDefinition(@"preencher com java script o campo nome do usuario")]
+        public void GivenPreencherComJavaScriptOCampoNomeDoUsuario()
+        {
+            convidarUsuarioPage.PreencherComJavaScriptOCampoNomeDoUsuario(JsonBuilder.GetAppSettings("USER") + "Novo");
+        }
+
+        [StepDefinition(@"preencher com java script o campo nome verdadeiro")]
+        public void GivenPreencherComJavaScriptOCampoNomeVerdadeiro()
+        {
+            convidarUsuarioPage.PreencherComJavaScriptOCampoNomeVerdadeiro("NovoUsuario");
+        }
+
+        [StepDefinition(@"preencher com java script o campo email do usuario")]
+        public void GivenPreencherComJavaScriptOCampoEmailDoUsuario()
+        {
+            convidarUsuarioPage.PreencherComJavaScriptOCampoEmailDoUsuario("Novo" + JsonBuilder.GetAppSettings("EMAIL"));
+        }
+
+        [StepDefinition(@"clicar com java script no botao criar usuario")]
+        public void WhenClicarComJavaScriptNoBotaoCriarUsuario()
+        {
+            convidarUsuarioPage.ClicarComJavaScriptNoBotaoCriarUsuario();
+        }
+
         [StepDefinition(@"visualizar a inclusao do usuario no banco")]
         public void ThenVisualizarAInclusaoDoUsuarioNoBanco()
         {

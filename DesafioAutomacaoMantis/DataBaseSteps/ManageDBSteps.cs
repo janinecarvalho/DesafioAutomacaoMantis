@@ -92,6 +92,7 @@ namespace DesafioAutomacaoMantis.DataBaseSteps
         private static String tableCampoPersonalizadoProjeto = "mantis_custom_field_table";
         private static String tableTarefaProjeto = "mantis_bug_table";
         private static String tableProjeto = "mantis_project_table";
+        private static String tableLembrete = "mantis_bugnote_text_table";
 
         private static String queryInsertCategoriaProjeto = $"INSERT INTO `{tableCategoriaProjeto}` (`id`, `project_id`, `user_id`, `name`, `status`) VALUES (2, 0, 0, ' BASE_2', 0);";
         private static String queryInsertPerfilGlobal = $"INSERT INTO `{tablePerfilGlobal}` (`id`, `user_id`, `platform`, `os`, `os_build`, `description`) VALUES (2, 0, '{JsonBuilder.GetAppSettings("PLATAFORMA")}', '{JsonBuilder.GetAppSettings("OS")}', '{JsonBuilder.GetAppSettings("VERSAO_OS")}', '{JsonBuilder.GetAppSettings("DESCRICAO_PROJETO")}');";
@@ -99,6 +100,7 @@ namespace DesafioAutomacaoMantis.DataBaseSteps
         private static String queryInsertCampoPersonalizadoProjeto = $"INSERT INTO `{tableCampoPersonalizadoProjeto}` (`id`, `name`, `type`, `possible_values`, `default_value`, `valid_regexp`, `access_level_r`, `access_level_rw`, `length_min`, `length_max`, `require_report`, `require_update`, `display_report`, `display_update`, `require_resolved`, `display_resolved`, `display_closed`, `require_closed`, `filter_by`) VALUES (2, 'PipelinejanineOLD', 0, '', '', '', 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);";
         private static String queryInsertTarefaProjeto = $"INSERT INTO `{tableTarefaProjeto}` (`id`, `project_id`, `reporter_id`, `handler_id`, `duplicate_id`, `priority`, `severity`, `reproducibility`, `status`, `resolution`, `projection`, `eta`, `bug_text_id`, `os`, `os_build`, `platform`, `version`, `fixed_in_version`, `build`, `profile_id`, `view_state`, `summary`, `sponsorship_total`, `sticky`, `target_version`, `category_id`, `date_submitted`, `due_date`, `last_updated`) VALUES (2, 2, 2, 2, 0, 30, 50, 70, 50, 10, 10, 10, 53, 'Windows', 'Win-10', 'Web', '', '', '', 0, 10, 'Tarefa Janine', 0, 0, '', 2, 1657217103, 1, 1657217103)";
         private static String queryInsertProjeto = $"INSERT INTO `{tableProjeto}` (`id`, `name`, `status`, `enabled`, `view_state`, `access_min`, `file_path`, `description`, `category_id`, `inherit_global`) VALUES (2, '{JsonBuilder.GetAppSettings("NOME_PROJETO") + "OLD"}', 10, 1, 10, 10, '', '{JsonBuilder.GetAppSettings("DESCRICAO_PROJETO")}', 1, 1);";
+        private static String queryInsertLembrete = $"INSERT INTO `{tableLembrete}` (`id`, `note`) VALUES (8, 'Teste!');";
 
         private static List<string> listAllQueryInsert()
         {
@@ -110,6 +112,7 @@ namespace DesafioAutomacaoMantis.DataBaseSteps
             listQuery.Add(queryInsertMarcadorProjeto);
             listQuery.Add(queryInsertTarefaProjeto);
             listQuery.Add(queryInsertCampoPersonalizadoProjeto);
+            listQuery.Add(queryInsertLembrete);
             
             return listQuery;
         }
@@ -123,6 +126,7 @@ namespace DesafioAutomacaoMantis.DataBaseSteps
             listQuery.Add(tableCampoPersonalizadoProjeto);
             listQuery.Add(tableTarefaProjeto);
             listQuery.Add(tableProjeto);
+            listQuery.Add(tableLembrete);
             
             return listQuery;
         }

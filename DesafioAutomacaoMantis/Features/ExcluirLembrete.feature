@@ -1,0 +1,18 @@
+﻿Feature: ExcluirLembrete
+
+@excluirLembrete
+Scenario: Excluir lembrete
+	Given que estou na tela inicial
+	And preencher o campo tarefa
+	And apertar a tecla enter
+	And clicar no botao apagar lembrete
+	When clicar no botao apagar anotacao
+	Then visualizar a exclusao do lembrete no banco
+
+Scenario: Excluir lembrete java script
+	Given que estou na tela inicial
+	And preencher com java script o campo tarefa
+	And apertar a tecla enter
+	And clicar com java script no botao apagar lembrete
+	When clicar com java script no botao apagar anotacao
+	Then visualizar a exclusao do lembrete no banco

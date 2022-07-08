@@ -27,6 +27,11 @@ namespace DesafioAutomacaoMantis.Pages
         By comboDestinatario = By.Id("recipient");
         By textAreaLembrete = By.Name("body");
         By btnEnviar = By.XPath("//*[@value='Enviar']");
+        By btnAlterarLembrete = By.XPath("//*[@id='bugnotes']//*[contains(text(),'Alterar')]");
+        By btnApagarLembrete = By.XPath("//*[@id='bugnotes']//*[contains(text(),'Apagar')]");
+        By textAreaLembreteAtualizar = By.Id("bugnote_text");
+        By btnAtualizarInformacaoLembrete = By.CssSelector("input[value='Atualizar Informação']");
+        By btnApagarInformacaoLembrete = By.CssSelector("input[value='Apagar Anotação']");
 
         #endregion
 
@@ -110,8 +115,43 @@ namespace DesafioAutomacaoMantis.Pages
         {
             Click(btnEnviar);
         }
+        public void ClicarNoBotaoAlterarLembrete()
+        {
+            MoveMouseToElement(btnAlterarLembrete);
+            Click(btnAlterarLembrete);
+        }
 
+        public void AtualizarOTextoDoLembrete(string texto)
+        {
+            SendKeys(textAreaLembreteAtualizar, texto);
+        }
+
+        public void ClicarNoBotaoAtualizarInformacaoDoLembrete()
+        {
+            Click(btnAtualizarInformacaoLembrete);
+        }
+
+        public void ClicarNoBotaoApagarLembrete()
+        {
+            MoveMouseToElement(btnApagarLembrete);
+            Click(btnApagarLembrete);
+        }
+
+        public void ClicarNoBotaoApagarAnotacao()
+        {
+            Click(btnApagarInformacaoLembrete);
+        }
+
+        public bool VisualizarAExclusaoDoLembreteNoBanco(string value)
+        {
+            return ManageDBSteps.ValidarExclusaoBD("mantis_bugnote_text_table", "note", value);
+        }
         public bool VisualizarAInclusaoDoLembreteNoBanco(string value)
+        {
+            return ManageDBSteps.ValidarInclusaoAlteracaoBD("mantis_bugnote_text_table", "note", value);
+        }
+
+        public bool VisualizarAAlteracaoDoLembreteNoBanco(string value)
         {
             return ManageDBSteps.ValidarInclusaoAlteracaoBD("mantis_bugnote_text_table", "note", value);
         }
@@ -128,6 +168,51 @@ namespace DesafioAutomacaoMantis.Pages
         public void ClicarComJavaScriptNoBotaoAtualizarInformacao()
         {
             ClickJavaScript(btnAtualizarInformacao);
+        }
+
+        public void PreencherComJavaScriptOCampoTarefa(string numeroTarefa)
+        {
+            SendKeysJavaScript(txtPesquisarTarefa, numeroTarefa);
+        }
+
+        public void ClicarComJavaScriptNoBotaoApagarLembrete()
+        {
+            MoveMouseToElement(btnApagarLembrete);
+            ClickJavaScript(btnApagarLembrete);
+        }
+
+        public void ClicarComJavaScriptNoBotaoApagarAnotacao()
+        {
+            ClickJavaScript(btnApagarInformacaoLembrete);
+        }
+
+        public void ClicarComJavaScriptNoBotaoEnviarUmLembrete()
+        {
+            ClickJavaScript(btnEnviarLembrete);
+        }
+
+        public void PreencherComJavaScriptOTextoDoLembrete(string textoLembrete)
+        {
+            SendKeysJavaScript(textAreaLembrete, textoLembrete);
+        }
+
+        public void ClicarComJavaScriptNoBotaoAlterarLembrete()
+        {
+            ClickJavaScript(btnAlterarLembrete);
+        }
+
+        public void AtualizarComJavaScriptOTextoDoLembrete(string texto)
+        {
+            SendKeysJavaScript(textAreaLembreteAtualizar,texto);
+        }
+
+        public void ClicarComJavaScriptNoBotaoAtualizarInformacaoDoLembrete()
+        {
+            ClickJavaScript(btnAtualizarInformacaoLembrete);
+        }
+        public void ClicarComJavaScriptNoBotaoEnviarLembrete()
+        {
+            ClickJavaScript(btnEnviar);
         }
         #endregion
     }

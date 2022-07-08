@@ -18,6 +18,7 @@ namespace DesafioAutomacaoMantis.Steps
         {
             excluirPerfisGlobaisPage.ClicarNoRadioboxApagarPerfil();
         }
+
         [StepDefinition(@"validar a exclusao do perfil no banco")]
         public void ThenValidarAExclusaoDoPerfilNoBanco()
         {

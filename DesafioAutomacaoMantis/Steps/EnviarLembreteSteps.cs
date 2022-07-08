@@ -38,7 +38,25 @@ namespace DesafioAutomacaoMantis.Steps
         {
             alterarTarefaPage.ClicarNoBotaoEnviarLembrete();
         }
-        
+
+        [StepDefinition(@"clicar com java script no botao enviar um lembrete")]
+        public void GivenClicarComJavaScriptNoBotaoEnviarUmLembrete()
+        {
+
+        }
+
+        [StepDefinition(@"preencher com java script o texto do lembrete")]
+        public void GivenPreencherComJavaScriptOTextoDoLembrete()
+        {
+            alterarTarefaPage.PreencherComJavaScriptOTextoDoLembrete("Teste lembrete!");
+        }
+
+        [StepDefinition(@"clicar com java script no botao enviar lembrete")]
+        public void WhenClicarComJavaScriptNoBotaoEnviarLembrete()
+        {
+            alterarTarefaPage.ClicarComJavaScriptNoBotaoEnviarLembrete();
+        }
+
         [StepDefinition(@"visualizar a inclusao do lembrete no banco")]
         public void ThenVisualizarAInclusaoDoLembreteNoBanco()
         {

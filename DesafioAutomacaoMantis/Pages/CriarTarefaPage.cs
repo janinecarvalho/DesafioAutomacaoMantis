@@ -24,6 +24,7 @@ namespace DesafioAutomacaoMantis.Pages
         By txtAplicarMarcadores = By.Id("tag_string");
         By checkContinuarRelatando = By.Id("report_stay");
         By btnCriarNovaTarefa = By.CssSelector("input[value='Criar Nova Tarefa']");
+        By btnCriarClone = By.CssSelector("input[value='Criar Clone']");
 
         #endregion
 
@@ -83,6 +84,10 @@ namespace DesafioAutomacaoMantis.Pages
         public void MarcarOCheckContinuarRelatando()
         {
             ClickCheckBoxAndRadioBoxJavaScript(checkContinuarRelatando);
+        }
+        public void ClicarNoBotaoCriarClone()
+        {
+            Click(btnCriarClone);
         }
         public void ClicarNoBotaoCriarNovaTarefa()
         {
