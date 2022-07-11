@@ -8,22 +8,22 @@ namespace DesafioAutomacaoMantis.Features
     [Binding]
     public class GerenciarProjetosSteps
     {
-        ExcluirProjetosPage excluirProjetosPage;
+        ProjetosPage projetosPage;
         public GerenciarProjetosSteps()
         {
-            excluirProjetosPage = new ExcluirProjetosPage();
+            projetosPage = new ProjetosPage();
         }
         
         [StepDefinition(@"clicar no projeto para excluir")]
         public void GivenClicarNoProjetoParaExcluir()
         {
-            excluirProjetosPage.ClicarProjetoDisplayed();
+            projetosPage.ClicarProjetoDisplayed();
         }
         
         [StepDefinition(@"clicar no botao apagar projeto")]
         public void GivenClicarNoBotaoApagarProjeto()
         {
-            excluirProjetosPage.ClicarBotaoApagarProjeto();
+            projetosPage.ClicarBotaoApagarProjeto();
         }
 
         [StepDefinition(@"validar a exclusao no banco")]
@@ -35,13 +35,13 @@ namespace DesafioAutomacaoMantis.Features
         [StepDefinition(@"clicar com java script no projeto para excluir")]
         public void GivenClicarComJavaScriptNoProjetoParaExcluir()
         {
-            excluirProjetosPage.ClicarComJavaScriptNoProjetoParaExcluir();
+            projetosPage.ClicarComJavaScriptNoProjetoParaExcluir();
         }
 
         [StepDefinition(@"clicar com java script no botao apagar projeto")]
         public void GivenClicarComJavaScriptNoBotaoApagarProjeto()
         {
-            excluirProjetosPage.ClicarComJavaScriptNoBotaoApagarProjeto();
+            projetosPage.ClicarComJavaScriptNoBotaoApagarProjeto();
         }
     }
 }

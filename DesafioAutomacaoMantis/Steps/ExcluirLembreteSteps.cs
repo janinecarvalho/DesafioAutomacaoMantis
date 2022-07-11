@@ -7,47 +7,47 @@ namespace DesafioAutomacaoMantis.Steps
     [Binding]
     public class ExcluirLembreteSteps
     {
-        AlterarTarefaPage alterarTarefaPage;
+        TarefaPage tarefaPage;
 
         public ExcluirLembreteSteps()
         {
-            alterarTarefaPage = new AlterarTarefaPage();
+            tarefaPage = new TarefaPage();
         }
 
         [StepDefinition(@"clicar no botao apagar lembrete")]
         public void GivenClicarNoBotaoApagarLembrete()
         {
-            alterarTarefaPage.ClicarNoBotaoApagarLembrete();
+            tarefaPage.ClicarNoBotaoApagarLembrete();
         }
 
         [StepDefinition(@"clicar no botao apagar anotacao")]
         public void WhenClicarNoBotaoApagarAnotacao()
         {
-            alterarTarefaPage.ClicarNoBotaoApagarAnotacao();
+            tarefaPage.ClicarNoBotaoApagarAnotacao();
         }
 
         [StepDefinition(@"visualizar a exclusao do lembrete no banco")]
         public void ThenVisualizarAExclusaoDoLembreteNoBanco()
         {
-            alterarTarefaPage.VisualizarAExclusaoDoLembreteNoBanco("Teste lembrete! [Atualizado]!");
+            tarefaPage.VisualizarAExclusaoDoLembreteNoBanco("Teste lembrete! [Atualizado]!");
         }
 
         [StepDefinition(@"preencher com java script o campo tarefa")]
         public void GivenPreencherComJavaScriptOCampoTarefa()
         {
-            alterarTarefaPage.PreencherComJavaScriptOCampoTarefa("0000002");
+            tarefaPage.PreencherComJavaScriptOCampoTarefa("0000002");
         }
 
         [StepDefinition(@"clicar com java script no botao apagar lembrete")]
         public void GivenClicarComJavaScriptNoBotaoApagarLembrete()
         {
-            alterarTarefaPage.ClicarComJavaScriptNoBotaoApagarLembrete();
+            tarefaPage.ClicarComJavaScriptNoBotaoApagarLembrete();
         }
 
         [StepDefinition(@"clicar com java script no botao apagar anotacao")]
         public void WhenClicarComJavaScriptNoBotaoApagarAnotacao()
         {
-            alterarTarefaPage.ClicarComJavaScriptNoBotaoApagarAnotacao();
+            tarefaPage.ClicarComJavaScriptNoBotaoApagarAnotacao();
         }
     }
 }

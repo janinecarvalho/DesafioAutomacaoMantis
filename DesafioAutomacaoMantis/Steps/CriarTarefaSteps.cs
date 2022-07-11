@@ -10,92 +10,92 @@ namespace DesafioAutomacaoMantis.Steps
     [Binding]
     public class CriarTarefaSteps
     {
-        CriarTarefaPage criarTarefaPage;
+        TarefaPage tarefaPage;
         public CriarTarefaSteps()
         {
-            criarTarefaPage = new CriarTarefaPage();
+            tarefaPage = new TarefaPage();
         }
         [StepDefinition(@"clicar no botao criar tarefa")]
         public void GivenClicarNoBotaoCriarTarefa()
         {
-            criarTarefaPage.ClicarNoBotaoCriarTarefa();
+            tarefaPage.ClicarNoBotaoCriarTarefa();
         }
         
         [StepDefinition(@"selecionar a categoria")]
         public void GivenSelecionarACategoria()
         {
-            criarTarefaPage.SelecionarACategoria(JsonBuilder.GetAppSettings("CATEGORIA_PROJETO"));
+            tarefaPage.SelecionarACategoria(JsonBuilder.GetAppSettings("CATEGORIA_PROJETO"));
         }
         
         [StepDefinition(@"selecionar a frequencia")]
         public void GivenSelecionarAFrequencia()
         {
-            criarTarefaPage.SelecionarAFrequencia("aleatório");
+            tarefaPage.SelecionarAFrequencia("aleatório");
         }
         
         [StepDefinition(@"selecionar a gravidade")]
         public void GivenSelecionarAGravidade()
         {
-            criarTarefaPage.SelecionarAGravidade("mínimo");
+            tarefaPage.SelecionarAGravidade("mínimo");
         }
         
         [StepDefinition(@"selecionar a prioridade")]
         public void GivenSelecionarAPrioridade()
         {
-            criarTarefaPage.SelecionarAPrioridade("baixa");
+            tarefaPage.SelecionarAPrioridade("baixa");
         }
         [StepDefinition(@"selecionar o campo perfil")]
         public void GivenSelecionarOCampoPerfil()
         {
-            criarTarefaPage.SelecionarOCampoPerfil(JsonBuilder.GetAppSettings("PERFIL_OS"));
+            tarefaPage.SelecionarOCampoPerfil(JsonBuilder.GetAppSettings("PERFIL_OS"));
         }
         
         [StepDefinition(@"selecionar o campo atribuir")]
         public void GivenSelecionarOCampoAtribuir()
         {
-            criarTarefaPage.SelecionarOCampoAtribuir(JsonBuilder.GetAppSettings("USER"));
+            tarefaPage.SelecionarOCampoAtribuir(JsonBuilder.GetAppSettings("USER"));
         }
         
         [StepDefinition(@"preencher o campo resumo")]
         public void GivenPreencherOCampoResumo()
         {
-            criarTarefaPage.PreencherOCampoResumo(JsonBuilder.GetAppSettings("NOME_MARCADOR"));
+            tarefaPage.PreencherOCampoResumo(JsonBuilder.GetAppSettings("NOME_MARCADOR"));
         }
         
         [StepDefinition(@"preencher o campo descricao")]
         public void GivenPreencherOCampoDescricao()
         {
-            criarTarefaPage.PreencherOCampoDescricao(JsonBuilder.GetAppSettings("DESCRICAO_PROJETO"));
+            tarefaPage.PreencherOCampoDescricao(JsonBuilder.GetAppSettings("DESCRICAO_PROJETO"));
         }
         
         [StepDefinition(@"preencher o campo passos para reproduzir")]
         public void GivenPreencherOCampoPassosParaReproduzir()
         {
-            criarTarefaPage.PreencherOCampoPassosParaReproduzir("1-Executar.");
+            tarefaPage.PreencherOCampoPassosParaReproduzir("1-Executar.");
         }
         
         [StepDefinition(@"preencher o campo informacao adicionais")]
         public void GivenPreencherOCampoInformacaoAdicionais()
         {
-            criarTarefaPage.PreencherOCampoInformacaoAdicionais("N-A");
+            tarefaPage.PreencherOCampoInformacaoAdicionais("N-A");
         }
         
         [StepDefinition(@"preencher o campo aplicar marcadores")]
         public void GivenPreencherOCampoAplicarMarcadores()
         {
-            criarTarefaPage.PreencherOCampoAplicarMarcadores(";");
+            tarefaPage.PreencherOCampoAplicarMarcadores(";");
         }
         
         [StepDefinition(@"marcar o check continuar relatando")]
         public void GivenMarcarOCheckContinuarRelatando()
         {
-            criarTarefaPage.MarcarOCheckContinuarRelatando();
+            tarefaPage.MarcarOCheckContinuarRelatando();
         }
         
         [StepDefinition(@"clicar no botao criar nova tarefa")]
         public void WhenClicarNoBotaoCriarNovaTarefa()
         {
-            criarTarefaPage.ClicarNoBotaoCriarNovaTarefa();
+            tarefaPage.ClicarNoBotaoCriarNovaTarefa();
         }
        
         [StepDefinition(@"visualizar a inclusao da tarefa no banco")]
@@ -107,43 +107,43 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"clicar com java script no botao criar tarefa")]
         public void GivenClicarComJavaScriptNoBotaoCriarTarefa()
         {
-            criarTarefaPage.GivenClicarComJavaScriptNoBotaoCriarTarefa();
+            tarefaPage.GivenClicarComJavaScriptNoBotaoCriarTarefa();
         }
 
         [StepDefinition(@"preencher com java script o campo resumo")]
         public void GivenPreencherComJavaScriptOCampoResumo()
         {
-            criarTarefaPage.PreencherComJavaScriptOCampoResumo(JsonBuilder.GetAppSettings("NOME_MARCADOR"));
+            tarefaPage.PreencherComJavaScriptOCampoResumo(JsonBuilder.GetAppSettings("NOME_MARCADOR"));
         }
 
         [StepDefinition(@"preencher com java script o campo descricao")]
         public void GivenPreencherComJavaScriptOCampoDescricao()
         {
-            criarTarefaPage.PreencherComJavaScriptOCampoDescricao(JsonBuilder.GetAppSettings("DESCRICAO_PROJETO"));
+            tarefaPage.PreencherComJavaScriptOCampoDescricao(JsonBuilder.GetAppSettings("DESCRICAO_PROJETO"));
         }
 
         [StepDefinition(@"preencher com java script o campo passos para reproduzir")]
         public void GivenPreencherComJavaScriptOCampoPassosParaReproduzir()
         {
-            criarTarefaPage.PreencherComJavaScriptOCampoPassosParaReproduzir("1-Executar.");
+            tarefaPage.PreencherComJavaScriptOCampoPassosParaReproduzir("1-Executar.");
         }
 
         [StepDefinition(@"preencher com java script o campo informacao adicionais")]
         public void GivenPreencherComJavaScriptOCampoInformacaoAdicionais()
         {
-            criarTarefaPage.PreencherComJavaScriptOCampoInformacaoAdicionais("N-A");
+            tarefaPage.PreencherComJavaScriptOCampoInformacaoAdicionais("N-A");
         }
 
         [StepDefinition(@"preencher com java script o campo aplicar marcadores")]
         public void GivenPreencherComJavaScriptOCampoAplicarMarcadores()
         {
-            criarTarefaPage.PreencherComJavaScriptOCampoAplicarMarcadores(";");
+            tarefaPage.PreencherComJavaScriptOCampoAplicarMarcadores(";");
         }
 
         [StepDefinition(@"clicar com java script no botao criar nova tarefa")]
         public void WhenClicarComJavaScriptNoBotaoCriarNovaTarefa()
         {
-            criarTarefaPage.ClicarComJavaScriptNoBotaoCriarNovaTarefa();
+            tarefaPage.ClicarComJavaScriptNoBotaoCriarNovaTarefa();
         }
     }
 }

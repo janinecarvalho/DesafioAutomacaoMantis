@@ -4,29 +4,29 @@ namespace DesafioAutomacaoMantis.Flows
 {
     public class CadastrarTarefaFlow
     {
-        CriarTarefaPage criarTarefaPage;
+        TarefaPage tarefaPage;
         public CadastrarTarefaFlow()
         {
-            criarTarefaPage = new CriarTarefaPage();
+            tarefaPage = new TarefaPage();
         }
 
         public void CadastrarTarefaComSucesso(string categoria, string frequencia, string gravidade, string prioridade, string perfil, string atribuir, string resumo, string descricao, string passosReproduzir, string infoAdicionais, string marcador)
         {
-            criarTarefaPage.ClicarNoBotaoCriarTarefa();
-            criarTarefaPage.SelecionarACategoria(categoria);
-            criarTarefaPage.SelecionarAFrequencia(frequencia);
-            criarTarefaPage.SelecionarAGravidade(gravidade);
-            criarTarefaPage.SelecionarAPrioridade(prioridade);
-            criarTarefaPage.SelecionarOCampoPerfil(perfil);
-            criarTarefaPage.ClicarNoBotaoMais();
-            criarTarefaPage.SelecionarOCampoAtribuir(atribuir);
-            criarTarefaPage.PreencherOCampoResumo(resumo);
-            criarTarefaPage.PreencherOCampoDescricao(descricao);
-            criarTarefaPage.PreencherOCampoPassosParaReproduzir(passosReproduzir);
-            criarTarefaPage.PreencherOCampoInformacaoAdicionais(infoAdicionais);
-            criarTarefaPage.PreencherOCampoAplicarMarcadores(marcador);
-            criarTarefaPage.MarcarOCheckContinuarRelatando();
-            criarTarefaPage.ClicarNoBotaoCriarNovaTarefa();
+            tarefaPage.ClicarNoBotaoCriarTarefa();
+            tarefaPage.SelecionarACategoria(categoria);
+            tarefaPage.SelecionarAFrequencia(frequencia);
+            tarefaPage.SelecionarAGravidade(gravidade);
+            tarefaPage.SelecionarAPrioridade(prioridade);
+            tarefaPage.SelecionarOCampoPerfil(perfil);
+            tarefaPage.ClicarNoBotaoMais();
+            tarefaPage.SelecionarOCampoAtribuir(atribuir);
+            tarefaPage.PreencherOCampoResumo(resumo);
+            tarefaPage.PreencherOCampoDescricao(descricao);
+            tarefaPage.PreencherOCampoPassosParaReproduzir(passosReproduzir);
+            tarefaPage.PreencherOCampoInformacaoAdicionais(infoAdicionais);
+            tarefaPage.PreencherOCampoAplicarMarcadores(marcador);
+            tarefaPage.MarcarOCheckContinuarRelatando();
+            tarefaPage.ClicarNoBotaoCriarNovaTarefa();
         }
     }
 }

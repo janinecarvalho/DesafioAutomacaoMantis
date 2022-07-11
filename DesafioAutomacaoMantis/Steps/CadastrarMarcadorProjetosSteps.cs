@@ -9,33 +9,33 @@ namespace DesafioAutomacaoMantis.Steps
     [Binding]
     public class CadastrarMarcadorProjetosSteps
     {
-        CadastrarMarcadorProjetosPage cadastrarMarcadorProjetosPage;
+        MarcadorProjetosPage marcadorProjetosPage;
         public CadastrarMarcadorProjetosSteps()
         {
-            cadastrarMarcadorProjetosPage = new CadastrarMarcadorProjetosPage();
+            marcadorProjetosPage = new MarcadorProjetosPage();
         }
         [StepDefinition(@"clicar na aba gerenciar marcadores")]
         public void GivenClicarNaAbaGerenciarMarcadores()
         {
-            cadastrarMarcadorProjetosPage.ClicarAbaMarcadores();
+            marcadorProjetosPage.ClicarAbaMarcadores();
         }
         
         [StepDefinition(@"preencher o campo nome do marcador")]
         public void GivenPreencherOCampoNomeDoMarcador()
         {
-            cadastrarMarcadorProjetosPage.PreencherCampoNomeMarcador(JsonBuilder.GetAppSettings("NOME_MARCADOR"));
+            marcadorProjetosPage.PreencherCampoNomeMarcador(JsonBuilder.GetAppSettings("NOME_MARCADOR"));
         }
         
         [StepDefinition(@"preencher o campo descricao do marcador")]
         public void GivenPreencherOCampoDescricaoDoMarcador()
         {
-            cadastrarMarcadorProjetosPage.PreencherCampoDescricaoMarcador(JsonBuilder.GetAppSettings("DESCRICAO_MARCADOR"));
+            marcadorProjetosPage.PreencherCampoDescricaoMarcador(JsonBuilder.GetAppSettings("DESCRICAO_MARCADOR"));
         }
         
         [StepDefinition(@"clicar no botao criar marcador")]
         public void WhenClicarNoBotaoCriarMarcador()
         {
-            cadastrarMarcadorProjetosPage.ClicarBotaoCriarMarcador();
+            marcadorProjetosPage.ClicarBotaoCriarMarcador();
         }
 
         [StepDefinition(@"visualizar a inclusao do marcador")]
@@ -47,25 +47,25 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"clicar com java script  na aba gerenciar marcadores")]
         public void GivenClicarComJavaScriptNaAbaGerenciarMarcadores()
         {
-            cadastrarMarcadorProjetosPage.ClicarComJavaScriptNaAbaGerenciarMarcadores();
+            marcadorProjetosPage.ClicarComJavaScriptNaAbaGerenciarMarcadores();
         }
 
         [StepDefinition(@"preencher com java script o campo nome do marcador")]
         public void GivenPreencherComJavaScriptOCampoNomeDoMarcador()
         {
-            cadastrarMarcadorProjetosPage.PreencherComJavaScriptOCampoNomeDoMarcador(JsonBuilder.GetAppSettings("NOME_MARCADOR"));
+            marcadorProjetosPage.PreencherComJavaScriptOCampoNomeDoMarcador(JsonBuilder.GetAppSettings("NOME_MARCADOR"));
         }
 
         [StepDefinition(@"preencher com java script o campo descricao do marcador")]
         public void GivenPreencherComJavaScriptOCampoDescricaoDoMarcador()
         {
-            cadastrarMarcadorProjetosPage.PreencherComJavaScriptOCampoDescricaoDoMarcador(JsonBuilder.GetAppSettings("DESCRICAO_MARCADOR"));
+            marcadorProjetosPage.PreencherComJavaScriptOCampoDescricaoDoMarcador(JsonBuilder.GetAppSettings("DESCRICAO_MARCADOR"));
         }
 
         [StepDefinition(@"clicar com java script no botao criar marcador")]
         public void WhenClicarComJavaScriptNoBotaoCriarMarcador()
         {
-            cadastrarMarcadorProjetosPage.ClicarComJavaScriptNoBotaoCriarMarcador();
+            marcadorProjetosPage.ClicarComJavaScriptNoBotaoCriarMarcador();
         }
     }
 }

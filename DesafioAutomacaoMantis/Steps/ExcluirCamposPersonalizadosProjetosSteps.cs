@@ -8,28 +8,28 @@ namespace DesafioAutomacaoMantis.Steps
     [Binding]
     public class ExcluirCamposPersonalizadosProjetosSteps
     {
-        ExcluirCamposPersonalizadosPage excluirCamposPersonalizadosPage;
+        CamposPersonalizadosProjetosPage CamposPersonalizadosProjetosPage;
 
         public ExcluirCamposPersonalizadosProjetosSteps()
         {
-            excluirCamposPersonalizadosPage = new ExcluirCamposPersonalizadosPage();
+            CamposPersonalizadosProjetosPage = new CamposPersonalizadosProjetosPage();
         }
         [StepDefinition(@"clicar no campo personalizado para excluir")]
         public void GivenClicarNoCampoPersonalizadoParaExcluir()
         {
-            excluirCamposPersonalizadosPage.ClicarNoCampoPersonalizadoParaExcluir();
+            CamposPersonalizadosProjetosPage.ClicarNoCampoPersonalizadoParaExcluir();
         }
         
         [StepDefinition(@"clicar no botao apagar campo personalizado")]
         public void GivenClicarNoBotaoApagarCampoPersonalizado()
         {
-            excluirCamposPersonalizadosPage.ClicarNoBotaoApagarCampoPersonalizado();
+            CamposPersonalizadosProjetosPage.ClicarNoBotaoApagarCampoPersonalizado();
         }
         
         [StepDefinition(@"clicar no botao apagar campo")]
         public void WhenClicarNoBotaoApagarCampo()
         {
-            excluirCamposPersonalizadosPage.ClicarNoBotaoApagarCampo();
+            CamposPersonalizadosProjetosPage.ClicarNoBotaoApagarCampo();
         }
 
         [StepDefinition(@"visualizar a exclusao do campo personalizado no banco")]
@@ -41,19 +41,19 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"clicar com java script no campo personalizado para excluir")]
         public void GivenClicarComJavaScriptNoCampoPersonalizadoParaExcluir()
         {
-            excluirCamposPersonalizadosPage.ClicarComJavaScriptNoCampoPersonalizadoParaExcluir();
+            CamposPersonalizadosProjetosPage.ClicarComJavaScriptNoCampoPersonalizadoParaExcluir();
         }
 
         [StepDefinition(@"clicar com java script no botao apagar campo personalizado")]
         public void GivenClicarComJavaScriptNoBotaoApagarCampoPersonalizado()
         {
-            excluirCamposPersonalizadosPage.ClicarComJavaScriptNoBotaoApagarCampoPersonalizado();
+            CamposPersonalizadosProjetosPage.ClicarComJavaScriptNoBotaoApagarCampoPersonalizado();
         }
 
         [StepDefinition(@"clicar com java script no botao apagar campo")]
         public void WhenClicarComJavaScriptNoBotaoApagarCampo()
         {
-            excluirCamposPersonalizadosPage.ClicarComJavaScriptNoBotaoApagarCampo();
+            CamposPersonalizadosProjetosPage.ClicarComJavaScriptNoBotaoApagarCampo();
         }
     }
 }

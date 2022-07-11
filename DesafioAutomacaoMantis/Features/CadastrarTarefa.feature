@@ -1,7 +1,7 @@
-﻿Feature: CriarTarefa
+﻿Feature: CadastrarTarefa
 
-@CriarTarefa
-Scenario: Criar tarefa
+@CadastrarTarefa
+Scenario: Cadastrar tarefa
 	Given que estou na tela inicial
 	And clicar no botao criar tarefa
 	And selecionar a categoria
@@ -20,7 +20,7 @@ Scenario: Criar tarefa
 	Then visualizar a inclusao da tarefa no banco
 
 
-Scenario: Criar tarefa java script
+Scenario: Cadastrar tarefa java script
 	Given que estou na tela inicial
 	And clicar com java script no botao criar tarefa
 	And selecionar a categoria

@@ -1,14 +1,11 @@
 ﻿using DesafioAutomacaoMantis.Bases;
 using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DesafioAutomacaoMantis.Pages
 {
-    public class CadastrarCamposPersonalizadosProjetosPage : PageBase
+    public class CamposPersonalizadosProjetosPage : PageBase
     {
-        #region Mapeamento
+        #region Mapeamento Cadastrar
         By txtNome = By.Name("name");
         By btnNovoCampoPersonalizado = By.XPath("//*[@value='Novo Campo Personalizado']");
         By txtValoresPossiveis = By.Id("custom-field-possible-values");
@@ -30,7 +27,17 @@ namespace DesafioAutomacaoMantis.Pages
         By msgSucesso = By.XPath("//p");
         #endregion
 
-        #region Action
+        #region Mapeamento Alterar
+        By campoDisplayed = By.XPath("//*[@class='table table-striped table-bordered table-condensed table-hover']/tbody/tr[1]/td[1]/a");
+        By comboTipo = By.Id("custom-field-type");
+        #endregion
+
+        #region Mapeamento Excluir
+        By btnApagarCampoPersonalizado = By.CssSelector("input[value='Apagar Campo Personalizado']");
+        By btnApagarCampo = By.CssSelector("input[value='Apagar Campo']");
+        #endregion
+
+        #region Action Cadastrar
         public void ClicarNaAbaGerenciarCamposPersonalizados()
         {
             Click(abaCamposPersonalizados);
@@ -80,7 +87,7 @@ namespace DesafioAutomacaoMantis.Pages
         public void MarcarOCheckboxResolverTarefas()
         {
             ClickCheckBoxAndRadioBoxJavaScript(checkResolverTarefas);
-        }       
+        }
         public void MarcarOCheckboxFecharTarefas()
         {
             ClickCheckBoxAndRadioBoxJavaScript(checkFecharTarefas);
@@ -147,6 +154,76 @@ namespace DesafioAutomacaoMantis.Pages
         public void ClicarComJavaScriptNoBotaoAtualizarCampoPersonalizado()
         {
             ClickJavaScript(btnAtualizarCampoPersonalizado);
+        }
+        #endregion
+
+        #region Action Alterar
+        public void ClicarNoCampoPersonalizadoParaAlterar(string campoPersonalizado)
+        {
+            Click(campoDisplayed);
+        }
+        public void SelecionarOTipo(string tipo)
+        {
+            ComboBoxSelectByVisibleText(comboTipo, tipo);
+        }
+        public void DesmarcarOCheckboxCriarTarefas()
+        {
+            ClickCheckBoxAndRadioBoxJavaScript(checkCriarTarefas);
+        }
+        public void DesmarcarOCheckboxResolverTarefas()
+        {
+            ClickCheckBoxAndRadioBoxJavaScript(checkResolverTarefas);
+        }
+        public void DesmarcarOCheckboxFecharTarefas()
+        {
+            ClickCheckBoxAndRadioBoxJavaScript(checkFecharTarefas);
+        }
+        public void DesmarcarOCheckboxRelato()
+        {
+            ClickCheckBoxAndRadioBoxJavaScript(checkRelato);
+        }
+        public void DesmarcarOCheckboxAtualizacao()
+        {
+            ClickCheckBoxAndRadioBoxJavaScript(checkAtualizacao);
+        }
+        public void DesmarcarOCheckboxResolucao()
+        {
+            ClickCheckBoxAndRadioBoxJavaScript(checkResolucao);
+        }
+        public void DesmarcarOCheckboxFechamento()
+        {
+            ClickCheckBoxAndRadioBoxJavaScript(checkFechamento);
+        }
+        public void ClicarComJavaScriptNoCampoPersonalizadoParaAlterar()
+        {
+            ClickJavaScript(campoDisplayed);
+        }
+        #endregion
+
+        #region Action Excluir
+        public void ClicarNoCampoPersonalizadoParaExcluir()
+        {
+            Click(campoDisplayed);
+        }
+        public void ClicarNoBotaoApagarCampoPersonalizado()
+        {
+            Click(btnApagarCampoPersonalizado);
+        }
+        public void ClicarNoBotaoApagarCampo()
+        {
+            Click(btnApagarCampo);
+        }
+        public void ClicarComJavaScriptNoCampoPersonalizadoParaExcluir()
+        {
+            ClickJavaScript(campoDisplayed);
+        }
+        public void ClicarComJavaScriptNoBotaoApagarCampoPersonalizado()
+        {
+            ClickJavaScript(btnApagarCampoPersonalizado);
+        }
+        public void ClicarComJavaScriptNoBotaoApagarCampo()
+        {
+            ClickJavaScript(btnApagarCampo);
         }
         #endregion
     }

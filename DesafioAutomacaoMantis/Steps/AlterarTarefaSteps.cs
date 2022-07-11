@@ -11,72 +11,72 @@ namespace DesafioAutomacaoMantis.Steps
     [Binding]
     public class AlterarTarefaSteps
     {
-        AlterarTarefaPage alterarTarefaPage;
+        TarefaPage tarefaPage;
         CadastrarTarefaFlow cadastrarTarefaFlow;
         public AlterarTarefaSteps()
         {
-            alterarTarefaPage = new AlterarTarefaPage();
+            tarefaPage = new TarefaPage();
             cadastrarTarefaFlow = new CadastrarTarefaFlow();
             cadastrarTarefaFlow.CadastrarTarefaComSucesso(JsonBuilder.GetAppSettings("CATEGORIA_PROJETO"), "aleatório", "mínimo", "baixa", JsonBuilder.GetAppSettings("PERFIL_OS"), JsonBuilder.GetAppSettings("USER"), JsonBuilder.GetAppSettings("NOME_MARCADOR"), JsonBuilder.GetAppSettings("DESCRICAO_PROJETO"), "1-Executar.", "N-A", ";");
         }
         [StepDefinition(@"clicar no botao ver tarefas")]
         public void GivenClicarNoBotaoVerTarefas()
         {
-            alterarTarefaPage.ClicarNoBotaoVerTarefas();
+            tarefaPage.ClicarNoBotaoVerTarefas();
         }
         
         [StepDefinition(@"clicar no botao atualizar")]
         public void GivenClicarNoBotaoAtualizar()
         {
-            alterarTarefaPage.ClicarNoBotaoAtualizar();
+            tarefaPage.ClicarNoBotaoAtualizar();
         }
         
         [StepDefinition(@"selecionar a categoria atualizado")]
         public void GivenSelecionarACategoriaAtualizado()
         {
-            alterarTarefaPage.SelecionarACategoriaAtualizado(JsonBuilder.GetAppSettings("CATEGORIA_PROJETO"));
+            tarefaPage.SelecionarACategoriaAtualizado(JsonBuilder.GetAppSettings("CATEGORIA_PROJETO"));
         }
         
         [StepDefinition(@"selecionar a visibilidade atualizado")]
         public void GivenSelecionarAvisibilidadeAtualizado()
         {
-            alterarTarefaPage.SelecionarAvisibilidadeAtualizado(JsonBuilder.GetAppSettings("VISIBILIDADE_PROJETO"));
+            tarefaPage.SelecionarAvisibilidadeAtualizado(JsonBuilder.GetAppSettings("VISIBILIDADE_PROJETO"));
         }
 
         [StepDefinition(@"selecionar o campo atribuir atualizado")]
         public void GivenSelecionarOCampoAtribuirAtualizado()
         {
-            alterarTarefaPage.SelecionarOCampoAtribuirAtualizado(JsonBuilder.GetAppSettings("USER"));
+            tarefaPage.SelecionarOCampoAtribuirAtualizado(JsonBuilder.GetAppSettings("USER"));
         }
 
         [StepDefinition(@"selecionar a prioridade atualizado")]
         public void GivenSelecionarAPrioridadeAtualizado()
         {
-            alterarTarefaPage.SelecionarAPrioridadeAtualizado(JsonBuilder.GetAppSettings("PRIORIDADE_PROJETO"));
+            tarefaPage.SelecionarAPrioridadeAtualizado(JsonBuilder.GetAppSettings("PRIORIDADE_PROJETO"));
         }
 
         [StepDefinition(@"selecionar a gravidade atualizado")]
         public void GivenSelecionarAGravidadeAtualizado()
         {
-            alterarTarefaPage.SelecionarAGravidadeAtualizado(JsonBuilder.GetAppSettings("GRAVIDADE_PROJETO"));
+            tarefaPage.SelecionarAGravidadeAtualizado(JsonBuilder.GetAppSettings("GRAVIDADE_PROJETO"));
         }
 
         [StepDefinition(@"selecionar o campo estado")]
         public void GivenSelecionarOCampoEstado()
         {
-            alterarTarefaPage.SelecionarOCampoEstado(JsonBuilder.GetAppSettings("ESTADO_PROJETO_UPDATE"));
+            tarefaPage.SelecionarOCampoEstado(JsonBuilder.GetAppSettings("ESTADO_PROJETO_UPDATE"));
         }
         
         [StepDefinition(@"selecionar o campo resolucao")]
         public void GivenSelecionarOCampoResolucao()
         {
-            alterarTarefaPage.SelecionarOCampoResolucao(JsonBuilder.GetAppSettings("RESOLUCAO_PROJETO"));
+            tarefaPage.SelecionarOCampoResolucao(JsonBuilder.GetAppSettings("RESOLUCAO_PROJETO"));
         }
         
         [StepDefinition(@"clicar no botao atualizar informacao")]
         public void WhenClicarNoBotaoAtualizarInformacao()
         {
-            alterarTarefaPage.ClicarNoBotaoAtualizarInformacao();
+            tarefaPage.ClicarNoBotaoAtualizarInformacao();
         }
 
         [Then(@"visualizar a alteracao da tarefa no banco")]
@@ -88,19 +88,19 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"clicar com java script no botao ver tarefas")]
         public void GivenClicarComJavaScriptNoBotaoVerTarefas()
         {
-            alterarTarefaPage.ClicarComJavaScriptNoBotaoVerTarefas();
+            tarefaPage.ClicarComJavaScriptNoBotaoVerTarefas();
         }
 
         [StepDefinition(@"clicar com java script no botao atualizar")]
         public void GivenClicarComJavaScriptNoBotaoAtualizar()
         {
-            alterarTarefaPage.ClicarComJavaScriptNoBotaoAtualizar();
+            tarefaPage.ClicarComJavaScriptNoBotaoAtualizar();
         }
 
         [StepDefinition(@"clicar com java script no botao atualizar informacao")]
         public void WhenClicarComJavaScriptNoBotaoAtualizarInformacao()
         {
-            alterarTarefaPage.ClicarComJavaScriptNoBotaoAtualizarInformacao();
+            tarefaPage.ClicarComJavaScriptNoBotaoAtualizarInformacao();
         }
     }
 }

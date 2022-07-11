@@ -8,15 +8,15 @@ namespace DesafioAutomacaoMantis.Steps
     [Binding]
     public class ExcluirPerfisGlobaisSteps
     {
-        ExcluirPerfisGlobaisPage excluirPerfisGlobaisPage;
+        PerfisGlobaisPage perfisGlobaisPage;
         public ExcluirPerfisGlobaisSteps()
         {
-            excluirPerfisGlobaisPage = new ExcluirPerfisGlobaisPage();
+            perfisGlobaisPage = new PerfisGlobaisPage();
         }
         [StepDefinition(@"clicar no radiobox apagar perfil")]
         public void GivenClicarNoRadioboxApagarPerfil()
         {
-            excluirPerfisGlobaisPage.ClicarNoRadioboxApagarPerfil();
+            perfisGlobaisPage.ClicarNoRadioboxApagarPerfil();
         }
 
         [StepDefinition(@"validar a exclusao do perfil no banco")]

@@ -9,47 +9,47 @@ namespace DesafioAutomacaoMantis.Steps
     [Binding]
     public class AlterarProjetosSteps
     {
-        AlterarProjetosPage alterarProjetosPage;
+        ProjetosPage projetosPage;
 
         public AlterarProjetosSteps()
         {
-            alterarProjetosPage = new AlterarProjetosPage();
+            projetosPage = new ProjetosPage();
         }
         
         [StepDefinition(@"clicar no projeto para alterar")]
         public void GivenClicarNoProjetoParaAlterar()
         {
-            alterarProjetosPage.ClicarProjetoDisplayed();
+            projetosPage.ClicarProjetoDisplayed();
         }
         
         [StepDefinition(@"preencher o campo nome do projeto atualizado")]
         public void GivenPreencherOCampoNomeDoProjetoAtualizado()
         {
-            alterarProjetosPage.PreencherNomeProjeto(JsonBuilder.GetAppSettings("NOME_PROJETO"));
+            projetosPage.PreencherNomeProjeto(JsonBuilder.GetAppSettings("NOME_PROJETO") + " [Atualizado]");
         }
         
         [StepDefinition(@"selecionar o estado do projeto atualizado")]
         public void GivenSelecionarOEstadoDoProjetoAtualizado()
         {
-            alterarProjetosPage.SelecionarEstadoProjeto("obsoleto");
+            projetosPage.SelecionarEstadoProjeto("obsoleto");
         }
         
         [StepDefinition(@"selecionar a visibilidade do projeto atualizado")]
         public void GivenSelecionarAVisibilidadeDoProjetoAtualizado()
         {
-            alterarProjetosPage.SelecionarVisibilidadeProjeto("público");
+            projetosPage.SelecionarVisibilidadeProjeto("público");
         }
         
         [StepDefinition(@"preencher o campo descricao do projeto atualizado")]
         public void GivenPreencherOCampoDescricaoDoProjetoAtualizado()
         {
-            alterarProjetosPage.PreencherAreaDescricao(JsonBuilder.GetAppSettings("NOME_PROJETO"));
+            projetosPage.PreencherAreaDescricao(" [Atualizado]");
         }
 
         [StepDefinition(@"clicar no botao atualizar projeto")]
         public void WhenClicarNoBotaoAtualizarProjeto()
         {
-            alterarProjetosPage.ClicarBotaoAtualizarProjeto();
+            projetosPage.ClicarBotaoAtualizarProjeto();
         }
 
         [StepDefinition(@"visualizar a alteracao do projeto no banco")]
@@ -61,19 +61,19 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"preencher com java script o campo nome do projeto atualizado")]
         public void GivenPreencherComJavaScriptOCampoNomeDoProjetoAtualizado()
         {
-            alterarProjetosPage.PreencherComJavaScriptOCampoNomeDoProjetoAtualizado(JsonBuilder.GetAppSettings("NOME_PROJETO"));
+            projetosPage.PreencherComJavaScriptOCampoNomeDoProjetoAtualizado(JsonBuilder.GetAppSettings("NOME_PROJETO"));
         }
 
         [StepDefinition(@"preencher com java script o campo descricao do projeto atualizado")]
         public void GivenPreencherComJavaScriptOCampoDescricaoDoProjetoAtualizado()
         {
-            alterarProjetosPage.PreencherComJavaScriptOCampoDescricaoDoProjetoAtualizado(JsonBuilder.GetAppSettings("NOME_PROJETO"));
+            projetosPage.PreencherComJavaScriptOCampoDescricaoDoProjetoAtualizado(JsonBuilder.GetAppSettings("NOME_PROJETO"));
         }
 
         [StepDefinition(@"clicar com java script no botao atualizar projeto")]
         public void WhenClicarComJavaScriptNoBotaoAtualizarProjeto()
         {
-            alterarProjetosPage.ClicarComJavaScriptNoBotaoAtualizarProjeto();
+            projetosPage.ClicarComJavaScriptNoBotaoAtualizarProjeto();
         }
     }
 }

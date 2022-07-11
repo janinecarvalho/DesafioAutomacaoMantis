@@ -8,23 +8,23 @@ namespace DesafioAutomacaoMantis.Steps
     [Binding]
     public class ExcluirCadastroCategoriaProjetosSteps
     {
-        ExcluirCategoriaProjetosPage excluirCadastroCategoriaProjetosPage;
+        CategoriaProjetosPage categoriaProjetosPage;
 
         public ExcluirCadastroCategoriaProjetosSteps()
         {
-            excluirCadastroCategoriaProjetosPage = new ExcluirCategoriaProjetosPage();
+            categoriaProjetosPage = new CategoriaProjetosPage();
         }
         
         [StepDefinition(@"clicar no botao apagar")]
         public void GivenClicarNoBotaoApagar()
         {
-            excluirCadastroCategoriaProjetosPage.ClicarBotaoApagar();
+            categoriaProjetosPage.ClicarBotaoApagar();
         }
         
         [StepDefinition(@"clicar no botao apagar categoria")]
         public void WhenClicarNoBotaoApagarCategoria()
         {
-            excluirCadastroCategoriaProjetosPage.ClicarBotaoApagarCategoria();
+            categoriaProjetosPage.ClicarBotaoApagarCategoria();
         }
 
         [StepDefinition(@"visualizar a exclusao da categoria no banco")]
@@ -36,13 +36,13 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"clicar com java script no botao apagar")]
         public void GivenClicarComJavaScriptNoBotaoApagar()
         {
-            excluirCadastroCategoriaProjetosPage.ClicarComJavaScriptNoBotaoApagar();
+            categoriaProjetosPage.ClicarComJavaScriptNoBotaoApagar();
         }
 
         [StepDefinition(@"clicar com java script no botao apagar categoria")]
         public void WhenClicarComJavaScriptNoBotaoApagarCategoria()
         {
-            excluirCadastroCategoriaProjetosPage.ClicarComJavaScriptNoBotaoApagarCategoria();
+            categoriaProjetosPage.ClicarComJavaScriptNoBotaoApagarCategoria();
         }
     }
 }

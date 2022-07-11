@@ -8,27 +8,27 @@ namespace DesafioAutomacaoMantis.Steps
     [Binding]
     public class PesquisarTarefaSteps
     {
-        AlterarTarefaPage alterarTarefaPage;
+        TarefaPage tarefaPage;
         public PesquisarTarefaSteps()
         {
-            alterarTarefaPage = new AlterarTarefaPage();
+            tarefaPage = new TarefaPage();
         }
         [StepDefinition(@"preencher o campo tarefa")]
         public void GivenPreencherOCampoTarefa()
         {
-            alterarTarefaPage.PreencherOCampoTarefa("0000002");
+            tarefaPage.PreencherOCampoTarefa("0000002");
         }
         
         [StepDefinition(@"apertar a tecla enter")]
         public void WhenApertarATecla()
         {
-            alterarTarefaPage.ApertarATeclaEnter();
+            tarefaPage.ApertarATeclaEnter();
         }
         
         [StepDefinition(@"visualizar o numero da tarefa")]
         public void ThenVisualizarONumeroDaTarefa()
         {
-            Assert.AreEqual("0000002", alterarTarefaPage.VisualizarONumeroDaTarefa());
+            Assert.AreEqual("0000002", tarefaPage.VisualizarONumeroDaTarefa());
         }
     }
 }

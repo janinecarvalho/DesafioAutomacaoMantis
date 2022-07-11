@@ -9,117 +9,117 @@ namespace DesafioAutomacaoMantis.Steps
     [Binding]
     public class CadastrarCamposPersonalizadosProjetosSteps
     {
-        CadastrarCamposPersonalizadosProjetosPage CadastrarCamposPersonalizadosProjetosPage;
+        CamposPersonalizadosProjetosPage CamposPersonalizadosProjetosPage;
         public CadastrarCamposPersonalizadosProjetosSteps()
         {
-            CadastrarCamposPersonalizadosProjetosPage = new CadastrarCamposPersonalizadosProjetosPage();
+            CamposPersonalizadosProjetosPage = new CamposPersonalizadosProjetosPage();
         }
         [StepDefinition(@"clicar na aba gerenciar campos personalizados")]
         public void GivenClicarNaAbaGerenciarCamposPersonalizados()
         {
-            CadastrarCamposPersonalizadosProjetosPage.ClicarNaAbaGerenciarCamposPersonalizados();
+            CamposPersonalizadosProjetosPage.ClicarNaAbaGerenciarCamposPersonalizados();
         }
         
         [StepDefinition(@"preencher o campo nome personalizado")]
         public void GivenPreencherOCampoNomePersonalizado()
         {
-            CadastrarCamposPersonalizadosProjetosPage.PreencherOCampoNomePersonalizado("Pipeline" + JsonBuilder.GetAppSettings("USER"));
+            CamposPersonalizadosProjetosPage.PreencherOCampoNomePersonalizado("Pipeline" + JsonBuilder.GetAppSettings("USER"));
         }
         
         [StepDefinition(@"clicar no botao novo campo personalizado")]
         public void GivenClicarNoBotaoNovoCampoPersonalizado()
         {
-            CadastrarCamposPersonalizadosProjetosPage.ClicarNoBotaoNovoCampoPersonalizado();
+            CamposPersonalizadosProjetosPage.ClicarNoBotaoNovoCampoPersonalizado();
         }
         
         [StepDefinition(@"preencher o campo valores possiveis")]
         public void GivenPreencherOCampoValoresPossiveis()
         {
-            CadastrarCamposPersonalizadosProjetosPage.PreencherOCampoValoresPossiveis(JsonBuilder.GetAppSettings("TIMEOUT_DEFAULT"));
+            CamposPersonalizadosProjetosPage.PreencherOCampoValoresPossiveis(JsonBuilder.GetAppSettings("TIMEOUT_DEFAULT"));
         }
         
         [StepDefinition(@"preencher o campo valor padrao")]
         public void GivenPreencherOCampoValorPadrao()
         {
-            CadastrarCamposPersonalizadosProjetosPage.PreencherOCampoValorPadrao(JsonBuilder.GetAppSettings("TIMEOUT_DEFAULT"));
+            CamposPersonalizadosProjetosPage.PreencherOCampoValorPadrao(JsonBuilder.GetAppSettings("TIMEOUT_DEFAULT"));
         }
         
         [StepDefinition(@"preencher o campo expressao regular")]
         public void GivenPreencherOCampoExpressaoRegular()
         {
-            CadastrarCamposPersonalizadosProjetosPage.PreencherOCampoExpressaoRegular("R");
+            CamposPersonalizadosProjetosPage.PreencherOCampoExpressaoRegular("R");
         }
         
         [StepDefinition(@"selecionar o acesso de leitura")]
         public void GivenSelecionarOAcessoDeLeitura()
         {
-            CadastrarCamposPersonalizadosProjetosPage.SelecionarOAcessoDeLeitura("administrador");
+            CamposPersonalizadosProjetosPage.SelecionarOAcessoDeLeitura("administrador");
         }
         
         [StepDefinition(@"selecionar o acesso de escrita")]
         public void GivenSelecionarOAcessoDeEscrita()
         {
-            CadastrarCamposPersonalizadosProjetosPage.SelecionarOAcessoDeEscrita("administrador");
+            CamposPersonalizadosProjetosPage.SelecionarOAcessoDeEscrita("administrador");
         }
         
         [StepDefinition(@"preencher o campo comprimento minimo")]
         public void GivenPreencherOCampoComprimentoMinimo()
         {
-            CadastrarCamposPersonalizadosProjetosPage.PreencherOCampoComprimentoMinimo(JsonBuilder.GetAppSettings("TIMEOUT_DEFAULT"));
+            CamposPersonalizadosProjetosPage.PreencherOCampoComprimentoMinimo(JsonBuilder.GetAppSettings("TIMEOUT_DEFAULT"));
         }
         
         [StepDefinition(@"preencher o campo comprimento maximo")]
         public void GivenPreencherOCampoComprimentoMaximo()
         {
-            CadastrarCamposPersonalizadosProjetosPage.PreencherOCampoComprimentoMaximo(JsonBuilder.GetAppSettings("TIMEOUT_DEFAULT"));
+            CamposPersonalizadosProjetosPage.PreencherOCampoComprimentoMaximo(JsonBuilder.GetAppSettings("TIMEOUT_DEFAULT"));
         }
         
         [StepDefinition(@"marcar o checkbox criar tarefas")]
         public void GivenMarcarOCheckboxCriarTarefas()
         {
-            CadastrarCamposPersonalizadosProjetosPage.MarcarOCheckboxCriarTarefas();
+            CamposPersonalizadosProjetosPage.MarcarOCheckboxCriarTarefas();
         }
         
         [StepDefinition(@"marcar o checkbox resolver tarefas")]
         public void GivenMarcarOCheckboxResolverTarefas()
         {
-            CadastrarCamposPersonalizadosProjetosPage.MarcarOCheckboxResolverTarefas();
+            CamposPersonalizadosProjetosPage.MarcarOCheckboxResolverTarefas();
         }
         
         [StepDefinition(@"marcar o checkbox fechar tarefas")]
         public void GivenMarcarOCheckboxFecharTarefas()
         {
-            CadastrarCamposPersonalizadosProjetosPage.MarcarOCheckboxFecharTarefas();
+            CamposPersonalizadosProjetosPage.MarcarOCheckboxFecharTarefas();
         }
         
         [StepDefinition(@"marcar o checkbox relato")]
         public void GivenMarcarOCheckboxRelato()
         {
-            CadastrarCamposPersonalizadosProjetosPage.MarcarOCheckboxRelato();
+            CamposPersonalizadosProjetosPage.MarcarOCheckboxRelato();
         }
         
         [StepDefinition(@"marcar o checkbox atualizacao")]
         public void GivenMarcarOCheckboxAtualizacao()
         {
-            CadastrarCamposPersonalizadosProjetosPage.MarcarOCheckboxAtualizacao();
+            CamposPersonalizadosProjetosPage.MarcarOCheckboxAtualizacao();
         }
         
         [StepDefinition(@"marcar o checkbox resolucao")]
         public void GivenMarcarOCheckboxResolucao()
         {
-            CadastrarCamposPersonalizadosProjetosPage.MarcarOCheckboxResolucao();
+            CamposPersonalizadosProjetosPage.MarcarOCheckboxResolucao();
         }
         
         [StepDefinition(@"marcar o checkbox fechamento")]
         public void GivenMarcarOCheckboxFechamento()
         {
-            CadastrarCamposPersonalizadosProjetosPage.MarcarOCheckboxFechamento();
+            CamposPersonalizadosProjetosPage.MarcarOCheckboxFechamento();
         }
         
         [StepDefinition(@"clicar no botao atualizar campo personalizado")]
         public void WhenClicarNoBotaoAtualizarCampoPersonalizado()
         {
-            CadastrarCamposPersonalizadosProjetosPage.ClicarNoBotaoAtualizarCampoPersonalizado();
+            CamposPersonalizadosProjetosPage.ClicarNoBotaoAtualizarCampoPersonalizado();
         }
 
         [Then(@"visualizar a inclusao do campo personalizado no banco")]
@@ -131,49 +131,49 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"clicar com java script na aba gerenciar campos personalizados")]
         public void GivenClicarComJavaScriptNaAbaGerenciarCamposPersonalizados()
         {
-            CadastrarCamposPersonalizadosProjetosPage.ClicarComJavaScriptNaAbaGerenciarCamposPersonalizados();
+            CamposPersonalizadosProjetosPage.ClicarComJavaScriptNaAbaGerenciarCamposPersonalizados();
         }
 
         [StepDefinition(@"preencher com java script o campo nome personalizado")]
         public void GivenPreencherComJavaScriptOCampoNomePersonalizado()
         {
-            CadastrarCamposPersonalizadosProjetosPage.PreencherComJavaScriptOCampoNomePersonalizado("Pipeline" + JsonBuilder.GetAppSettings("USER"));
+            CamposPersonalizadosProjetosPage.PreencherComJavaScriptOCampoNomePersonalizado("Pipeline" + JsonBuilder.GetAppSettings("USER"));
         }
 
         [StepDefinition(@"preencher com java script o campo valores possiveis")]
         public void GivenPreencherComJavaScriptOCampoValoresPossiveis()
         {
-            CadastrarCamposPersonalizadosProjetosPage.PreencherComJavaScriptOCampoValoresPossiveis(JsonBuilder.GetAppSettings("TIMEOUT_DEFAULT"));
+            CamposPersonalizadosProjetosPage.PreencherComJavaScriptOCampoValoresPossiveis(JsonBuilder.GetAppSettings("TIMEOUT_DEFAULT"));
         }
 
         [StepDefinition(@"preencher com java script o campo valor padrao")]
         public void GivenPreencherComJavaScriptOCampoValorPadrao()
         {
-            CadastrarCamposPersonalizadosProjetosPage.PreencherComJavaScriptOCampoValorPadrao(JsonBuilder.GetAppSettings("TIMEOUT_DEFAULT"));
+            CamposPersonalizadosProjetosPage.PreencherComJavaScriptOCampoValorPadrao(JsonBuilder.GetAppSettings("TIMEOUT_DEFAULT"));
         }
 
         [StepDefinition(@"preencher com java script o campo expressao regular")]
         public void GivenPreencherComJavaScriptOCampoExpressaoRegular()
         {
-            CadastrarCamposPersonalizadosProjetosPage.PreencherComJavaScriptOCampoExpressaoRegular("R");
+            CamposPersonalizadosProjetosPage.PreencherComJavaScriptOCampoExpressaoRegular("R");
         }
 
         [StepDefinition(@"preencher com java script o campo comprimento minimo")]
         public void GivenPreencherComJavaScriptOCampoComprimentoMinimo()
         {
-            CadastrarCamposPersonalizadosProjetosPage.PreencherComJavaScriptOCampoComprimentoMinimo(JsonBuilder.GetAppSettings("TIMEOUT_DEFAULT"));
+            CamposPersonalizadosProjetosPage.PreencherComJavaScriptOCampoComprimentoMinimo(JsonBuilder.GetAppSettings("TIMEOUT_DEFAULT"));
         }
 
         [StepDefinition(@"preencher com java script o campo comprimento maximo")]
         public void GivenPreencherComJavaScriptOCampoComprimentoMaximo()
         {
-            CadastrarCamposPersonalizadosProjetosPage.PreencherComJavaScriptOCampoComprimentoMaximo(JsonBuilder.GetAppSettings("TIMEOUT_DEFAULT"));
+            CamposPersonalizadosProjetosPage.PreencherComJavaScriptOCampoComprimentoMaximo(JsonBuilder.GetAppSettings("TIMEOUT_DEFAULT"));
         }
 
         [StepDefinition(@"clicar com java script no botao atualizar campo personalizado")]
         public void WhenClicarComJavaScriptNoBotaoAtualizarCampoPersonalizado()
         {
-            CadastrarCamposPersonalizadosProjetosPage.ClicarComJavaScriptNoBotaoAtualizarCampoPersonalizado();
+            CamposPersonalizadosProjetosPage.ClicarComJavaScriptNoBotaoAtualizarCampoPersonalizado();
         }
 
     }

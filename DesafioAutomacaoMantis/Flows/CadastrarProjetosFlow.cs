@@ -4,21 +4,21 @@ namespace DesafioAutomacaoMantis.Flows
 {
     public class CadastrarProjetosFlow
     {
-        CadastrarProjetosPage cadastrarProjetosPage;
+        ProjetosPage projetosPage;
         public CadastrarProjetosFlow()
         {
-            cadastrarProjetosPage = new CadastrarProjetosPage();
+            projetosPage = new ProjetosPage();
         }
         public void CadastrarProjetoComSucesso(string nomeProjeto, string estadoProjeto,string visibilidadeProjeto, string descricaoProjeto)
         {
-            cadastrarProjetosPage.ClicarBotaoGerenciar();
-            cadastrarProjetosPage.NavegarAbaGerenciarProjetos();
-            cadastrarProjetosPage.ClicarBotaoNovoProjeto();
-            cadastrarProjetosPage.PreencherNomeProjeto(nomeProjeto);
-            cadastrarProjetosPage.SelecionarEstadoProjeto(estadoProjeto);
-            cadastrarProjetosPage.SelecionarVisibilidadeProjeto(visibilidadeProjeto);
-            cadastrarProjetosPage.PreencherAreaDescricao(descricaoProjeto);
-            cadastrarProjetosPage.ClicarBotaoAdicionarProjeto();
+            projetosPage.ClicarBotaoGerenciar();
+            projetosPage.NavegarAbaGerenciarProjetos();
+            projetosPage.ClicarBotaoNovoProjeto();
+            projetosPage.PreencherNomeProjeto(nomeProjeto);
+            projetosPage.SelecionarEstadoProjeto(estadoProjeto);
+            projetosPage.SelecionarVisibilidadeProjeto(visibilidadeProjeto);
+            projetosPage.PreencherAreaDescricao(descricaoProjeto);
+            projetosPage.ClicarBotaoAdicionarProjeto();
         }
     }
 }

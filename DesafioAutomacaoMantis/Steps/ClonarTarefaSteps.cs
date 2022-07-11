@@ -7,17 +7,17 @@ namespace DesafioAutomacaoMantis.Steps
     [Binding]
     public class ClonarTarefaSteps
     {
-        CriarTarefaPage criarTarefaPage;
+        TarefaPage tarefaPage;
 
         public ClonarTarefaSteps()
         {
-            criarTarefaPage = new CriarTarefaPage();
+            tarefaPage = new TarefaPage();
         }
 
         [StepDefinition(@"clicar no botao criar clone")]
         public void GivenClicarNoBotaoCriarClone()
         {
-            criarTarefaPage.ClicarNoBotaoCriarClone();
+            tarefaPage.ClicarNoBotaoCriarClone();
         }
     }
 }

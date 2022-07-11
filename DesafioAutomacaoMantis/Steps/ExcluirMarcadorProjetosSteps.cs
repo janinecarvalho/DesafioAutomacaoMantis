@@ -8,16 +8,16 @@ namespace DesafioAutomacaoMantis.Steps
     [Binding]
     public class ExcluirMarcadorProjetosSteps
     {
-        ExcluirMarcadorProjetosPage ExcluirMarcadorProjetosPage;
+        MarcadorProjetosPage marcadorProjetosPage;
 
         public ExcluirMarcadorProjetosSteps()
         {
-            ExcluirMarcadorProjetosPage = new ExcluirMarcadorProjetosPage();
+            marcadorProjetosPage = new MarcadorProjetosPage();
         }
         [StepDefinition(@"clicar no botao apagar marcador")]
         public void GivenClicarNoBotaoApagarMarcador()
         {
-            ExcluirMarcadorProjetosPage.ClicarBotaoApagarMarcador();
+            marcadorProjetosPage.ClicarBotaoApagarMarcador();
         }
 
         [StepDefinition(@"visualizar a exclusao do marcador no banco")]
@@ -29,7 +29,7 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"clicar com java script no botao apagar marcador")]
         public void GivenClicarComJavaScriptNoBotaoApagarMarcador()
         {
-            ExcluirMarcadorProjetosPage.GivenClicarComJavaScriptNoBotaoApagarMarcador();
+            marcadorProjetosPage.GivenClicarComJavaScriptNoBotaoApagarMarcador();
         }
     }
 }

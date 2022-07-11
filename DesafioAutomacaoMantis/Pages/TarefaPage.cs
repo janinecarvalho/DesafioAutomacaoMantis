@@ -7,16 +7,32 @@ using System.Text;
 
 namespace DesafioAutomacaoMantis.Pages
 {
-    public class AlterarTarefaPage : PageBase
+    public class TarefaPage : PageBase
     {
         #region Mapeamento
+        By abaCriartarefa = By.CssSelector("a[href='/bug_report_page.php']");
+        By comboCategoria = By.Id("category_id");
+        By comboFrequencia = By.Id("reproducibility");
+        By comboGravidade = By.Id("severity");
+        By comboPrioridade = By.Id("priority");
+        By comboPerfil = By.Id("profile_id");
+        By btnPlus = By.Id("profile_closed_link");
+        By comboAtribuir = By.Id("handler_id");
+        By txtResumo = By.Id("summary");
+        By areaDescricao = By.Id("description");
+        By areaPassosReproduzir = By.Id("steps_to_reproduce");
+        By areaAdicionais = By.Id("additional_info");
+        By txtAplicarMarcadores = By.Id("tag_string");
+        By checkContinuarRelatando = By.Id("report_stay");
+        By btnCriarNovaTarefa = By.CssSelector("input[value='Criar Nova Tarefa']");
+        By btnCriarClone = By.CssSelector("input[value='Criar Clone']");
+        #endregion
+
+        #region Mapeamento Alterar
         By btnVerTarefas = By.CssSelector("a[href='/view_all_bug_page.php']");
         By btnEditar = By.XPath("//*[contains(@title,'Atualizar')]");
-        By comboCategoria = By.Id("category_id");
         By comboVisibilidade = By.Id("view_state");
         By comboAtribuido = By.Id("handler_id");
-        By comboPrioridade = By.Id("priority");
-        By comboGravidade = By.Id("severity");
         By comboEstado = By.Id("status");
         By comboResolucao = By.Id("resolution");
         By btnAtualizarInformacao = By.CssSelector("input[value='Atualizar Informação']");
@@ -25,17 +41,128 @@ namespace DesafioAutomacaoMantis.Pages
         By painelNumeroTarefa = By.XPath("//*[@class='table table-bordered table-condensed']//*[@class='bug-id']");
         By btnEnviarLembrete = By.XPath("//*[@id='main-container']//*[contains(text(),'Enviar um lembrete')]");
         By comboDestinatario = By.Id("recipient");
-        By textAreaLembrete = By.Name("body");
+        By textAreaLembrete = By.Name("bugnote_text");
         By btnEnviar = By.XPath("//*[@value='Enviar']");
         By btnAlterarLembrete = By.XPath("//*[@id='bugnotes']//*[contains(text(),'Alterar')]");
         By btnApagarLembrete = By.XPath("//*[@id='bugnotes']//*[contains(text(),'Apagar')]");
         By textAreaLembreteAtualizar = By.Id("bugnote_text");
         By btnAtualizarInformacaoLembrete = By.CssSelector("input[value='Atualizar Informação']");
         By btnApagarInformacaoLembrete = By.CssSelector("input[value='Apagar Anotação']");
-
         #endregion
 
-        #region Action
+        #region Mapeamento Excluir
+        By checkTarefaDisplayed = By.Name("bug_arr[]");
+        By comboSelecionarAcao = By.Name("action");
+        By btnOK = By.CssSelector("input[value='OK']");
+        By btnApagarTarefas = By.CssSelector("input[value='Apagar Tarefas']");
+        By painelTarefa = By.XPath("//*[contains(text(),'Recente')]");
+        #endregion
+
+        #region Action Cadastrar
+        public void ClicarNoBotaoCriarTarefa()
+        {
+            Click(abaCriartarefa);
+        }
+        public void SelecionarACategoria(string categoria)
+        {
+            ComboBoxSelectByVisibleText(comboCategoria, categoria);
+        }
+        public void SelecionarAFrequencia(string frequencia)
+        {
+            ComboBoxSelectByVisibleText(comboFrequencia, frequencia);
+        }
+        public void SelecionarAGravidade(string gravidade)
+        {
+            ComboBoxSelectByVisibleText(comboGravidade, gravidade);
+        }
+        public void SelecionarAPrioridade(string prioridade)
+        {
+            ComboBoxSelectByVisibleText(comboPrioridade, prioridade);
+        }
+        public void SelecionarOCampoPerfil(string perfil)
+        {
+            ComboBoxSelectByVisibleText(comboPerfil, perfil);
+        }
+        public void ClicarNoBotaoMais()
+        {
+            ClickCheckBoxAndRadioBoxJavaScript(btnPlus);
+        }
+        public void SelecionarOCampoAtribuir(string atribuir)
+        {
+            ComboBoxSelectByVisibleText(comboAtribuir, atribuir);
+        }
+        public void PreencherOCampoResumo(string resumo)
+        {
+            SendKeys(txtResumo, resumo);
+        }
+        public void PreencherOCampoDescricao(string descricao)
+        {
+            SendKeys(areaDescricao, descricao);
+        }
+        public void PreencherOCampoPassosParaReproduzir(string passosReproduzir)
+        {
+            SendKeys(areaPassosReproduzir, passosReproduzir);
+        }
+        public void PreencherOCampoInformacaoAdicionais(string infoAdicionais)
+        {
+            SendKeys(areaAdicionais, infoAdicionais);
+        }
+        public void PreencherOCampoAplicarMarcadores(string marcador)
+        {
+            SendKeys(txtAplicarMarcadores, marcador);
+        }
+        public void MarcarOCheckContinuarRelatando()
+        {
+            ClickCheckBoxAndRadioBoxJavaScript(checkContinuarRelatando);
+        }
+        public void ClicarNoBotaoCriarClone()
+        {
+            Click(btnCriarClone);
+        }
+        public void ClicarNoBotaoCriarNovaTarefa()
+        {
+            Click(btnCriarNovaTarefa);
+        }
+        public bool VizualizoOPainelDetalhesDaTarefa()
+        {
+            return ReturnIfElementIsDisplayed(btnCriarNovaTarefa);
+        }
+        public void GivenClicarComJavaScriptNoBotaoCriarTarefa()
+        {
+            Click(abaCriartarefa);
+        }
+        public void PreencherComJavaScriptOCampoResumo(string resumo)
+        {
+            SendKeysJavaScript(txtResumo, resumo);
+        }
+
+        public void PreencherComJavaScriptOCampoDescricao(string descricao)
+        {
+            SendKeysJavaScript(areaDescricao, descricao);
+        }
+
+        public void PreencherComJavaScriptOCampoPassosParaReproduzir(string passosReproduzir)
+        {
+            SendKeysJavaScript(areaPassosReproduzir, passosReproduzir);
+        }
+
+        public void PreencherComJavaScriptOCampoInformacaoAdicionais(string infoAdicionais)
+        {
+            SendKeysJavaScript(areaAdicionais, infoAdicionais);
+        }
+
+        public void PreencherComJavaScriptOCampoAplicarMarcadores(string marcador)
+        {
+            SendKeysJavaScript(txtAplicarMarcadores, marcador);
+        }
+
+        public void ClicarComJavaScriptNoBotaoCriarNovaTarefa()
+        {
+            ClickJavaScript(abaCriartarefa);
+        }
+        #endregion
+
+        #region Action Alterar
         public void ClicarNoBotaoVerTarefas()
         {
             Click(btnVerTarefas);
@@ -198,12 +325,13 @@ namespace DesafioAutomacaoMantis.Pages
 
         public void ClicarComJavaScriptNoBotaoAlterarLembrete()
         {
+            MoveMouseToElement(btnAlterarLembrete);
             ClickJavaScript(btnAlterarLembrete);
         }
 
         public void AtualizarComJavaScriptOTextoDoLembrete(string texto)
         {
-            SendKeysJavaScript(textAreaLembreteAtualizar,texto);
+            SendKeysJavaScript(textAreaLembreteAtualizar, texto);
         }
 
         public void ClicarComJavaScriptNoBotaoAtualizarInformacaoDoLembrete()
@@ -212,7 +340,42 @@ namespace DesafioAutomacaoMantis.Pages
         }
         public void ClicarComJavaScriptNoBotaoEnviarLembrete()
         {
-            ClickJavaScript(btnEnviar);
+            ClickJavaScript(btnEnviarLembrete);
+        }
+        #endregion
+
+        #region Action Excluir
+        public void ClicarNoCheckboxDaTarefaAExcluir()
+        {
+            ClickCheckBoxAndRadioBoxJavaScript(checkTarefaDisplayed);
+        }
+        public void SelecionarOSelecionarTudo(string acao)
+        {
+            ComboBoxSelectByVisibleText(comboSelecionarAcao, acao);
+        }
+        public void ClicarNoBotaoOk()
+        {
+            Click(btnOK);
+        }
+        public void ClicarNoBotaoApagarTarefas()
+        {
+            Click(btnApagarTarefas);
+        }
+        public void ClicarNoBotaoApagarTarefasJavaScript()
+        {
+            ClickJavaScript(btnApagarTarefas);
+        }
+        public bool VizualizoOPainelDeTarefas()
+        {
+            return ReturnIfElementIsDisplayed(painelTarefa);
+        }
+        public void GivenClicarComJavaScriptNoBotaoOk()
+        {
+            ClickJavaScript(btnOK);
+        }
+        public void WhenClicarComJavaScriptNoBotaoApagarTarefas()
+        {
+            ClickJavaScript(btnApagarTarefas);
         }
         #endregion
     }

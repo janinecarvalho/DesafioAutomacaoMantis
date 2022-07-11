@@ -9,33 +9,33 @@ namespace DesafioAutomacaoMantis.Steps
     [Binding]
     public class ExcluirTarefaSteps
     {
-        ExcluirTarefaPage excluirTarefaPage;
+        TarefaPage tarefaPage;
         public ExcluirTarefaSteps()
         {
-            excluirTarefaPage = new ExcluirTarefaPage();
+            tarefaPage = new TarefaPage();
         }
         [StepDefinition(@"clicar no checkbox da tarefa a excluir")]
         public void GivenClicarNoCheckboxDaTarefaAExcluir()
         {
-            excluirTarefaPage.ClicarNoCheckboxDaTarefaAExcluir();
+            tarefaPage.ClicarNoCheckboxDaTarefaAExcluir();
         }
         
         [StepDefinition(@"selecionar o selecionar tudo")]
         public void GivenSelecionarOSelecionarTudo()
         {
-            excluirTarefaPage.SelecionarOSelecionarTudo("Apagar");
+            tarefaPage.SelecionarOSelecionarTudo("Apagar");
         }
         
         [StepDefinition(@"clicar no botao ok")]
         public void GivenClicarNoBotaoOk()
         {
-            excluirTarefaPage.ClicarNoBotaoOk();
+            tarefaPage.ClicarNoBotaoOk();
         }
         
         [StepDefinition(@"clicar no botao apagar tarefas")]
         public void WhenClicarNoBotaoApagarTarefas()
         {
-            excluirTarefaPage.ClicarNoBotaoApagarTarefas();
+            tarefaPage.ClicarNoBotaoApagarTarefas();
         }
 
         [StepDefinition(@"validar a exclusao da tarefa no banco")]
@@ -47,13 +47,13 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"clicar com java script no botao ok")]
         public void GivenClicarComJavaScriptNoBotaoOk()
         {
-            excluirTarefaPage.GivenClicarComJavaScriptNoBotaoOk();
+            tarefaPage.GivenClicarComJavaScriptNoBotaoOk();
         }
 
         [StepDefinition(@"clicar com java script no botao apagar tarefas")]
         public void WhenClicarComJavaScriptNoBotaoApagarTarefas()
         {
-            excluirTarefaPage.ClicarNoBotaoApagarTarefasJavaScript();
+            tarefaPage.ClicarNoBotaoApagarTarefasJavaScript();
         }
     }
 }

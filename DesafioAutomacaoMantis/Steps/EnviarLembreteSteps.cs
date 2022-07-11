@@ -8,59 +8,59 @@ namespace DesafioAutomacaoMantis.Steps
     [Binding]
     public class EnviarLembreteSteps
     {
-        AlterarTarefaPage alterarTarefaPage;
+        TarefaPage tarefaPage;
 
         public EnviarLembreteSteps()
         {
-            alterarTarefaPage = new AlterarTarefaPage();
+            tarefaPage = new TarefaPage();
         }
 
         [StepDefinition(@"clicar no botao enviar um lembrete")]
         public void GivenClicarNoBotaoEnviarUmLembrete()
         {
-            alterarTarefaPage.ClicarNoBotaoEnviarUmLembrete();
+            tarefaPage.ClicarNoBotaoEnviarUmLembrete();
         }
         
         [StepDefinition(@"selecionar o destinatario")]
         public void GivenSelecionarODestinatario()
         {
-            alterarTarefaPage.SelecionarODestinatario("janine");
+            tarefaPage.SelecionarODestinatario("janine");
         }
         
         [StepDefinition(@"preencher o texto do lembrete")]
         public void GivenPreencherOTextoDoLembrete()
         {
-            alterarTarefaPage.PreencherOTextoDoLembrete("Teste lembrete!");
+            tarefaPage.PreencherOTextoDoLembrete("Teste lembrete!");
         }
         
         [StepDefinition(@"clicar no botao enviar lembrete")]
         public void WhenClicarNoBotaoEnviarLembrete()
         {
-            alterarTarefaPage.ClicarNoBotaoEnviarLembrete();
+            tarefaPage.ClicarNoBotaoEnviarLembrete();
         }
 
         [StepDefinition(@"clicar com java script no botao enviar um lembrete")]
         public void GivenClicarComJavaScriptNoBotaoEnviarUmLembrete()
         {
-
+            tarefaPage.ClicarComJavaScriptNoBotaoEnviarLembrete();
         }
 
         [StepDefinition(@"preencher com java script o texto do lembrete")]
         public void GivenPreencherComJavaScriptOTextoDoLembrete()
         {
-            alterarTarefaPage.PreencherComJavaScriptOTextoDoLembrete("Teste lembrete!");
+            tarefaPage.PreencherComJavaScriptOTextoDoLembrete("Teste lembrete!");
         }
 
         [StepDefinition(@"clicar com java script no botao enviar lembrete")]
         public void WhenClicarComJavaScriptNoBotaoEnviarLembrete()
         {
-            alterarTarefaPage.ClicarComJavaScriptNoBotaoEnviarLembrete();
+            tarefaPage.ClicarComJavaScriptNoBotaoEnviarLembrete();
         }
 
         [StepDefinition(@"visualizar a inclusao do lembrete no banco")]
         public void ThenVisualizarAInclusaoDoLembreteNoBanco()
         {
-            Assert.IsTrue(alterarTarefaPage.VisualizarAInclusaoDoLembreteNoBanco("Teste lembrete!"));
+            Assert.IsTrue(tarefaPage.VisualizarAInclusaoDoLembreteNoBanco("Teste lembrete!"));
         }
     }
 }
