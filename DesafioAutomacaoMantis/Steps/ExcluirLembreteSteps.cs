@@ -1,4 +1,6 @@
-﻿using DesafioAutomacaoMantis.Pages;
+﻿using DesafioAutomacaoMantis.Flows;
+using DesafioAutomacaoMantis.Helpers;
+using DesafioAutomacaoMantis.Pages;
 using System;
 using TechTalk.SpecFlow;
 
@@ -30,24 +32,6 @@ namespace DesafioAutomacaoMantis.Steps
         public void ThenVisualizarAExclusaoDoLembreteNoBanco()
         {
             tarefaPage.VisualizarAExclusaoDoLembreteNoBanco("Teste lembrete! [Atualizado]!");
-        }
-
-        [StepDefinition(@"preencher com java script o campo tarefa")]
-        public void GivenPreencherComJavaScriptOCampoTarefa()
-        {
-            tarefaPage.PreencherComJavaScriptOCampoTarefa("0000002");
-        }
-
-        [StepDefinition(@"clicar com java script no botao apagar lembrete")]
-        public void GivenClicarComJavaScriptNoBotaoApagarLembrete()
-        {
-            tarefaPage.ClicarComJavaScriptNoBotaoApagarLembrete();
-        }
-
-        [StepDefinition(@"clicar com java script no botao apagar anotacao")]
-        public void WhenClicarComJavaScriptNoBotaoApagarAnotacao()
-        {
-            tarefaPage.ClicarComJavaScriptNoBotaoApagarAnotacao();
         }
     }
 }

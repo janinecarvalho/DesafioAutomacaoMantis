@@ -1,4 +1,5 @@
-﻿Feature: ExcluirTarefa
+﻿@Retry(3)
+Feature: ExcluirTarefa
 
 @ExcluirTarefa
 Scenario: Exclusao de tarefa

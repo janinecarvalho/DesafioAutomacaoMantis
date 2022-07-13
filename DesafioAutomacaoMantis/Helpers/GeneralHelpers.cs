@@ -7,8 +7,8 @@ using System.Threading;
 
 namespace DesafioAutomacaoMantis.Helpers
 {
-        public class GeneralHelpers
-        {
+    public class GeneralHelpers
+    {
             public static string RetornaCaminhoDoProjeto()
             {
                 string pth = System.Reflection.Assembly.GetCallingAssembly().CodeBase;
@@ -124,5 +124,9 @@ namespace DesafioAutomacaoMantis.Helpers
                 File.Delete(directoryPath + "/" + fileName);
             }
 
+        public static string CompletarNumeroEsquerda(string value, int maxlength)
+        {
+            return (value.ToString().PadLeft(maxlength,'0'));
         }
+    }
 }

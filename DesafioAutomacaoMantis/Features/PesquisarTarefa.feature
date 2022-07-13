@@ -1,4 +1,5 @@
-﻿Feature: PesquisarTarefa
+﻿@Retry(3)
+Feature: PesquisarTarefa
 
 @pesquisarTarefa
 Scenario: Pesquisar tarefa

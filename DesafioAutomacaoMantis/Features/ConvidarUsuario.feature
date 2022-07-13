@@ -1,4 +1,5 @@
-﻿Feature: ConvidarUsuario
+﻿@Retry(3)
+Feature: ConvidarUsuario
 
 @convidarUsuario
 Scenario: Convidar usuario

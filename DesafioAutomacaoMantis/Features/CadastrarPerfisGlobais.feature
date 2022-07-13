@@ -1,4 +1,5 @@
-﻿Feature: CadastrarPerfisGlobais
+﻿@Retry(3)
+Feature: CadastrarPerfisGlobais
 
 @CadastrarPerfisGlobais
 Scenario: Cadastro de perfis globais

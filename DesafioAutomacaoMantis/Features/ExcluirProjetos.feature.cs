@@ -21,12 +21,14 @@ namespace DesafioAutomacaoMantis.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Excluir Projetos")]
+    [NUnit.Framework.CategoryAttribute("Retry(3)")]
     public partial class ExcluirProjetosFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private static string[] featureTags = ((string[])(null));
+        private static string[] featureTags = new string[] {
+                "Retry(3)"};
         
 #line 1 "ExcluirProjetos.feature"
 #line hidden

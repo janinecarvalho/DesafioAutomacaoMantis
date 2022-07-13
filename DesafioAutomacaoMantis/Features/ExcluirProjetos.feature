@@ -1,5 +1,5 @@
-﻿Feature: Excluir Projetos
-
+﻿@Retry(3)
+Feature: Excluir Projetos
 
 @ExcluirProjeto
 Scenario: Exclusao de projeto

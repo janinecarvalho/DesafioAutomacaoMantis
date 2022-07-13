@@ -1,4 +1,5 @@
-﻿using DesafioAutomacaoMantis.Helpers;
+﻿using DesafioAutomacaoMantis.Flows;
+using DesafioAutomacaoMantis.Helpers;
 using DesafioAutomacaoMantis.Pages;
 using NUnit.Framework;
 using System;
@@ -10,10 +11,15 @@ namespace DesafioAutomacaoMantis.Steps
     public class ExcluirVersaoProjetoSteps
     {
         ProjetosPage projetosPage;
+        CadastrarVersaoProjetoFlow cadastrarVersaoProjetoFlow;
 
         public ExcluirVersaoProjetoSteps()
         {
             projetosPage = new ProjetosPage();
+
+            cadastrarVersaoProjetoFlow = new CadastrarVersaoProjetoFlow();
+
+            cadastrarVersaoProjetoFlow.CadastrarVersaoProjetoComSucesso();
         }
 
         [StepDefinition(@"clicar no botao apagar da versao do projeto")]

@@ -1,4 +1,5 @@
-﻿Feature: AlterarCamposPersonalizadosProjetos
+﻿@Retry(3)
+Feature: AlterarCamposPersonalizadosProjetos
 
 @AlterarCampoPersonalizado
 Scenario: Alteracao de campo personalizado

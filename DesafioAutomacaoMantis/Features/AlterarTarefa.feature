@@ -1,4 +1,5 @@
-﻿Feature: AlterarTarefa
+﻿@Retry(3)
+Feature: AlterarTarefa
 
 @AlterarTarefa
 Scenario: Alteracao de tarefa

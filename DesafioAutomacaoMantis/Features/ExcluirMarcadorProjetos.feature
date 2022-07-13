@@ -1,5 +1,5 @@
-﻿Feature: ExcluirMarcadorProjetos
-	Simple calculator for adding two numbers
+﻿@Retry(3)
+Feature: ExcluirMarcadorProjetos
 
 @ExcluirMarcador
 Scenario: Exclusao de marcador

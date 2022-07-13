@@ -1,4 +1,5 @@
-﻿Feature: AlterarCategoriaProjetos
+﻿@Retry(3)
+Feature: AlterarCategoriaProjetos
 
 @AlterarCategoria
 Scenario: Alteracao de categoria

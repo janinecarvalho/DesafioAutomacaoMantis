@@ -1,4 +1,5 @@
-﻿Feature: AlterarPerfisGlobais
+﻿@Retry(3)
+Feature: AlterarPerfisGlobais
 
 @AlterarPerfisGlobais
 Scenario: Alteracao de perfis globais

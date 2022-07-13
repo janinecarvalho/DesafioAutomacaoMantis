@@ -14,14 +14,14 @@ namespace DesafioAutomacaoMantis.Pages
         #endregion
 
         #region Mapeamento Alterar
-        By btnAlterarCategoria = By.XPath("//*[@id='categories']/div/div[2]/div/div/table/tbody/tr[1]/td[3]/div/div[1]/form/fieldset/button");
+        By btnAlterarCategoria = By.XPath("//*[@id='categories']//table/tbody/tr[1]/td[3]/div/div[1]/form/fieldset/button");
         By txtNomeCategoria = By.Id("proj-category-name");
-        By comboAtribuido = By.Id("proj-category-assigned-to");//janine
+        By comboAtribuido = By.Id("proj-category-assigned-to");
         By btnAtualizarCategoria = By.CssSelector("input[value='Atualizar Categoria']");
         #endregion
 
         #region Mapeamento Excluir
-        By btnApagar = By.XPath("//*[@action='manage_proj_cat_delete.php?id=2&project_id=0']//button[contains(text(),'Apagar')]");////*[@id='categories']/div/div[2]/div/div/table/tbody/tr[1]/td[3]/div/div[2]/form/fieldset/button
+        By btnApagar = By.XPath("//*//*[@id='categories']//table/tbody/tr[1]/td[3]/div/div[2]/form/fieldset/button");
         By btnApagarCategoria = By.CssSelector("input[value='Apagar Categoria']");
         #endregion
 

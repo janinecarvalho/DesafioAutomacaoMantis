@@ -1,4 +1,5 @@
-﻿Feature: CadastrarTarefa
+﻿@Retry(3)
+Feature: CadastrarTarefa
 
 @CadastrarTarefa
 Scenario: Cadastrar tarefa

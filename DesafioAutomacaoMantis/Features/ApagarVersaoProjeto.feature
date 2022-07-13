@@ -1,4 +1,5 @@
-﻿Feature: ExcluirVersaoProjeto
+﻿@Retry(3)
+Feature: ExcluirVersaoProjeto
 
 @ExcluirVersaoProjeto
 Scenario: Excluir versao projeto

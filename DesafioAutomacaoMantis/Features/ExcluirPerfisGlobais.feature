@@ -1,4 +1,5 @@
-﻿Feature: ExcluirPerfisGlobais
+﻿@Retry(3)
+Feature: ExcluirPerfisGlobais
 
 @ExcluirPerfisGlobais
 Scenario: Exclusao de perfis globais

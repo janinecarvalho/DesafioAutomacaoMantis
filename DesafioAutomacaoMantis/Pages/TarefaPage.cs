@@ -41,7 +41,7 @@ namespace DesafioAutomacaoMantis.Pages
         By painelNumeroTarefa = By.XPath("//*[@class='table table-bordered table-condensed']//*[@class='bug-id']");
         By btnEnviarLembrete = By.XPath("//*[@id='main-container']//*[contains(text(),'Enviar um lembrete')]");
         By comboDestinatario = By.Id("recipient");
-        By textAreaLembrete = By.Name("bugnote_text");
+        By textAreaLembrete = By.Name("body");
         By btnEnviar = By.XPath("//*[@value='Enviar']");
         By btnAlterarLembrete = By.XPath("//*[@id='bugnotes']//*[contains(text(),'Alterar')]");
         By btnApagarLembrete = By.XPath("//*[@id='bugnotes']//*[contains(text(),'Apagar')]");
@@ -56,6 +56,13 @@ namespace DesafioAutomacaoMantis.Pages
         By btnOK = By.CssSelector("input[value='OK']");
         By btnApagarTarefas = By.CssSelector("input[value='Apagar Tarefas']");
         By painelTarefa = By.XPath("//*[contains(text(),'Recente')]");
+        #endregion
+
+        #region Action GetMaxIdTable
+        public string GetMaxIdTable()
+        {
+            return ManageDBSteps.GetIdMassaTable("mantis_bug_table");
+        }
         #endregion
 
         #region Action Cadastrar
@@ -93,23 +100,23 @@ namespace DesafioAutomacaoMantis.Pages
         }
         public void PreencherOCampoResumo(string resumo)
         {
-            SendKeys(txtResumo, resumo);
+            ClearAndSendKeys(txtResumo, resumo);
         }
         public void PreencherOCampoDescricao(string descricao)
         {
-            SendKeys(areaDescricao, descricao);
+            ClearAndSendKeys(areaDescricao, descricao);
         }
         public void PreencherOCampoPassosParaReproduzir(string passosReproduzir)
         {
-            SendKeys(areaPassosReproduzir, passosReproduzir);
+            ClearAndSendKeys(areaPassosReproduzir, passosReproduzir);
         }
         public void PreencherOCampoInformacaoAdicionais(string infoAdicionais)
         {
-            SendKeys(areaAdicionais, infoAdicionais);
+            ClearAndSendKeys(areaAdicionais, infoAdicionais);
         }
         public void PreencherOCampoAplicarMarcadores(string marcador)
         {
-            SendKeys(txtAplicarMarcadores, marcador);
+            ClearAndSendKeys(txtAplicarMarcadores, marcador);
         }
         public void MarcarOCheckContinuarRelatando()
         {
@@ -158,7 +165,7 @@ namespace DesafioAutomacaoMantis.Pages
 
         public void ClicarComJavaScriptNoBotaoCriarNovaTarefa()
         {
-            ClickJavaScript(abaCriartarefa);
+            ClickJavaScript(btnCriarNovaTarefa);
         }
         #endregion
 

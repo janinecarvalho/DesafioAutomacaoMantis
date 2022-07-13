@@ -1,4 +1,5 @@
-﻿Feature: AlterarVersaoProjeto
+﻿@Retry(3)
+Feature: AlterarVersaoProjeto
 
 @AlterarVersaoProjeto
 Scenario: Alterar versao projeto

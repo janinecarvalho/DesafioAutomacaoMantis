@@ -1,4 +1,5 @@
-﻿using DesafioAutomacaoMantis.Pages;
+﻿using DesafioAutomacaoMantis.Flows;
+using DesafioAutomacaoMantis.Pages;
 using System;
 using TechTalk.SpecFlow;
 
@@ -8,10 +9,15 @@ namespace DesafioAutomacaoMantis.Steps
     public class AlterarLembreteSteps
     {
         TarefaPage tarefaPage;
+        CadastrarLembreteFlow CadastrarLembreteFlow;
 
         public AlterarLembreteSteps()
         {
             tarefaPage = new TarefaPage();
+
+            CadastrarLembreteFlow = new CadastrarLembreteFlow();
+
+            CadastrarLembreteFlow.CadastrarLembreteComSucesso("janine", "Teste lembrete!");
         }
 
         [StepDefinition(@"clicar no botao alterar lembrete")]

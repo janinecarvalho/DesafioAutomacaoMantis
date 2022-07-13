@@ -1,4 +1,5 @@
-﻿Feature: AlterarMarcadorProjetos
+﻿@Retry(3)
+Feature: AlterarMarcadorProjetos
 
 @AlterarMarcador
 Scenario: Alteracao de marcador 

@@ -197,9 +197,6 @@ C:\Users\janin\Desktop\DesafioAutomacaoMantis\DesafioAutomacaoMantis\obj\Debug\n
 C:\Users\janin\Desktop\DesafioAutomacaoMantis\DesafioAutomacaoMantis\obj\Debug\netcoreapp3.1\DesafioAutomacaoMantis.pdb
 C:\Users\janin\Desktop\DesafioAutomacaoMantis\DesafioAutomacaoMantis\obj\Debug\netcoreapp3.1\DesafioAutomacaoMantis.genruntimeconfig.cache
 C:\Users\janin\Desktop\DesafioAutomacaoMantis\DesafioAutomacaoMantis\obj\Debug\netcoreapp3.1\DesafioAutomacaoMantis.csprojAssemblyReference.cache
-E:\Backup\Repositorio Base2\DesafioAutomacaoMantis\DesafioAutomacaoMantis\obj\Debug\netcoreapp3.1\DesafioAutomacaoMantis.AssemblyInfoInputs.cache
-E:\Backup\Repositorio Base2\DesafioAutomacaoMantis\DesafioAutomacaoMantis\obj\Debug\netcoreapp3.1\DesafioAutomacaoMantis.AssemblyInfo.cs
-E:\Backup\Repositorio Base2\DesafioAutomacaoMantis\DesafioAutomacaoMantis\obj\Debug\netcoreapp3.1\DesafioAutomacaoMantis.csproj.CoreCompileInputs.cache
 E:\Backup\Repositorio Base2\DesafioAutomacaoMantis\DesafioAutomacaoMantis\bin\Debug\netcoreapp3.1\testhost.dll
 E:\Backup\Repositorio Base2\DesafioAutomacaoMantis\DesafioAutomacaoMantis\bin\Debug\netcoreapp3.1\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.dll
 E:\Backup\Repositorio Base2\DesafioAutomacaoMantis\DesafioAutomacaoMantis\bin\Debug\netcoreapp3.1\testhost.exe
@@ -391,8 +388,11 @@ E:\Backup\Repositorio Base2\DesafioAutomacaoMantis\DesafioAutomacaoMantis\bin\De
 E:\Backup\Repositorio Base2\DesafioAutomacaoMantis\DesafioAutomacaoMantis\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 E:\Backup\Repositorio Base2\DesafioAutomacaoMantis\DesafioAutomacaoMantis\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 E:\Backup\Repositorio Base2\DesafioAutomacaoMantis\DesafioAutomacaoMantis\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+E:\Backup\Repositorio Base2\DesafioAutomacaoMantis\DesafioAutomacaoMantis\obj\Debug\netcoreapp3.1\DesafioAutomacaoMantis.csprojAssemblyReference.cache
+E:\Backup\Repositorio Base2\DesafioAutomacaoMantis\DesafioAutomacaoMantis\obj\Debug\netcoreapp3.1\DesafioAutomacaoMantis.AssemblyInfoInputs.cache
+E:\Backup\Repositorio Base2\DesafioAutomacaoMantis\DesafioAutomacaoMantis\obj\Debug\netcoreapp3.1\DesafioAutomacaoMantis.AssemblyInfo.cs
+E:\Backup\Repositorio Base2\DesafioAutomacaoMantis\DesafioAutomacaoMantis\obj\Debug\netcoreapp3.1\DesafioAutomacaoMantis.csproj.CoreCompileInputs.cache
 E:\Backup\Repositorio Base2\DesafioAutomacaoMantis\DesafioAutomacaoMantis\obj\Debug\netcoreapp3.1\DesafioAutomacaoMantis.csproj.CopyComplete
 E:\Backup\Repositorio Base2\DesafioAutomacaoMantis\DesafioAutomacaoMantis\obj\Debug\netcoreapp3.1\DesafioAutomacaoMantis.dll
 E:\Backup\Repositorio Base2\DesafioAutomacaoMantis\DesafioAutomacaoMantis\obj\Debug\netcoreapp3.1\DesafioAutomacaoMantis.pdb
 E:\Backup\Repositorio Base2\DesafioAutomacaoMantis\DesafioAutomacaoMantis\obj\Debug\netcoreapp3.1\DesafioAutomacaoMantis.genruntimeconfig.cache
-E:\Backup\Repositorio Base2\DesafioAutomacaoMantis\DesafioAutomacaoMantis\obj\Debug\netcoreapp3.1\DesafioAutomacaoMantis.csprojAssemblyReference.cache

@@ -1,4 +1,5 @@
-﻿Feature: ClonarTarefa
+﻿@Retry(3)
+Feature: ClonarTarefa
 
 @clonarTarefa
 Scenario: Clonar tarefa

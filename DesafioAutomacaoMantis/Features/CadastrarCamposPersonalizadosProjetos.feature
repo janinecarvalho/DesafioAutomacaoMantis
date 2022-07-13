@@ -1,4 +1,5 @@
-﻿Feature: CadastrarCamposPersonalizadosProjetos
+﻿@Retry(3)
+Feature: CadastrarCamposPersonalizadosProjetos
 
 @CadastrarCampoPersonalizado
 Scenario: Cadastro de campos personalizados

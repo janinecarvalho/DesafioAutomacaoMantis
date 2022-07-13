@@ -1,4 +1,5 @@
-﻿Feature: ExcluirCadastroCategoriaProjetos
+﻿@Retry(3)
+Feature: ExcluirCadastroCategoriaProjetos
 
 @ExcluirCategoria
 Scenario: Exclusao de categoria

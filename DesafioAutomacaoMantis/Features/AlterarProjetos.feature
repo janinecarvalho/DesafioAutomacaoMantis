@@ -1,4 +1,5 @@
-﻿Feature: AlterarProjetos
+﻿@Retry(3)
+Feature: AlterarProjetos
 
 @AlterarProjeto
 Scenario: Alteracao de projeto

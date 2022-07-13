@@ -19,7 +19,6 @@ namespace DesafioAutomacaoMantis.Hooks
             ExtentReportHelpers.CreateFeature();
             ManageDBSteps.DeleteUserDB("administrator");
             ManageDBSteps.InsertUserDB(JsonBuilder.GetAppSettings("USER"), JsonBuilder.GetAppSettings("PASSWORD_HASH"));
-            ManageDBSteps.InserirMassaDB();
         }
 
         [BeforeScenario]
@@ -28,6 +27,7 @@ namespace DesafioAutomacaoMantis.Hooks
             ExtentReportHelpers.CreateScenario();
             DriverFactory.CreateInstance();
             DriverFactory.INSTANCE.Manage().Window.Maximize();
+            ManageDBSteps.InserirMassaDB();
         }
 
         [AfterStep]

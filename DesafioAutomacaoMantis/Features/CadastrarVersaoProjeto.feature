@@ -1,4 +1,5 @@
-﻿Feature: CadastrarVersaoProjeto
+﻿@Retry(3)
+Feature: CadastrarVersaoProjeto
 
 @CadastrarVersaoProjeto
 Scenario: Cadastrar versao de projeto

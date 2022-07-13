@@ -1,4 +1,5 @@
-﻿Feature: ExcluirCamposPersonalizadosProjetos
+﻿@Retry(3)
+Feature: ExcluirCamposPersonalizadosProjetos
 
 @ExcluirCampoPersonalizadp
 Scenario: Exclusao de campos personalizados

@@ -1,4 +1,5 @@
-﻿Feature: CadastrarCategoriaProjetos
+﻿@Retry(3)
+Feature: CadastrarCategoriaProjetos
 
 @CadastrarCategoria
 Scenario: Cadastro de categoria

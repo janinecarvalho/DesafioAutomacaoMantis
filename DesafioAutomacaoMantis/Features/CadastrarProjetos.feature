@@ -1,4 +1,5 @@
-﻿Feature: Cadastro Projetos
+﻿@Retry(3)
+Feature: Cadastro Projetos
 
 @CadastroDeProjeto
 Scenario: Cadastro de projeto

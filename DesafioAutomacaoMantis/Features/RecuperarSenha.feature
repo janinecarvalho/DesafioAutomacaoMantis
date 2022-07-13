@@ -1,4 +1,5 @@
-﻿Feature: RecuperarSenha
+﻿@Retry(3)
+Feature: RecuperarSenha
 
 @recuperarSenha
 Scenario: Recuperar senha

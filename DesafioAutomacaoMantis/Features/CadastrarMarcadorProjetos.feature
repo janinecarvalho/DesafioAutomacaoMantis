@@ -1,4 +1,5 @@
-﻿Feature: CadastrarMarcadorProjetos
+﻿@Retry(3)
+Feature: CadastrarMarcadorProjetos
 
 @CadastrarMarcador
 Scenario: Cadastro de marcador
