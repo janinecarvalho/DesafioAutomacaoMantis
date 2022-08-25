@@ -15,6 +15,13 @@ namespace DesafioAutomacaoMantis.Steps
         {
             perfisGlobaisPage = new PerfisGlobaisPage();
         }
+
+        #region Parameters of test
+        string tabela = "mantis_user_profile_table";
+        string coluna = "platform";
+        string textoEsperado = "Web";
+        #endregion
+
         [StepDefinition(@"clicar na aba gerenciar perfis globais")]
         public void GivenClicarNaAbaGerenciarPerfisGlobais()
         {
@@ -54,7 +61,7 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"visualizar a inclusao de perfil")]
         public void ThenVisualizarAInclusaoDePerfil()
         {
-            Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD("mantis_user_profile_table", "platform", "Web"));
+            Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD(tabela, coluna, textoEsperado));
         }
 
         [StepDefinition(@"clicar com java scrip na aba gerenciar perfis globais")]

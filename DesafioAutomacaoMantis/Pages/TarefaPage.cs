@@ -58,13 +58,6 @@ namespace DesafioAutomacaoMantis.Pages
         By painelTarefa = By.XPath("//*[contains(text(),'Recente')]");
         #endregion
 
-        #region Action GetMaxIdTable
-        public string GetMaxIdTable()
-        {
-            return ManageDBSteps.GetIdMassaTable("mantis_bug_table");
-        }
-        #endregion
-
         #region Action Cadastrar
         public void ClicarNoBotaoCriarTarefa()
         {
@@ -274,20 +267,6 @@ namespace DesafioAutomacaoMantis.Pages
         public void ClicarNoBotaoApagarAnotacao()
         {
             Click(btnApagarInformacaoLembrete);
-        }
-
-        public bool VisualizarAExclusaoDoLembreteNoBanco(string value)
-        {
-            return ManageDBSteps.ValidarExclusaoBD("mantis_bugnote_text_table", "note", value);
-        }
-        public bool VisualizarAInclusaoDoLembreteNoBanco(string value)
-        {
-            return ManageDBSteps.ValidarInclusaoAlteracaoBD("mantis_bugnote_text_table", "note", value);
-        }
-
-        public bool VisualizarAAlteracaoDoLembreteNoBanco(string value)
-        {
-            return ManageDBSteps.ValidarInclusaoAlteracaoBD("mantis_bugnote_text_table", "note", value);
         }
 
         public void ClicarComJavaScriptNoBotaoVerTarefas()

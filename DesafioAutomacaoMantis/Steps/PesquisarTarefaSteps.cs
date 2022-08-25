@@ -1,4 +1,5 @@
-﻿using DesafioAutomacaoMantis.Flows;
+﻿using DesafioAutomacaoMantis.DataBaseSteps;
+using DesafioAutomacaoMantis.Flows;
 using DesafioAutomacaoMantis.Helpers;
 using DesafioAutomacaoMantis.Pages;
 using NUnit.Framework;
@@ -27,7 +28,7 @@ namespace DesafioAutomacaoMantis.Steps
 
             CadastrarLembreteFlow.CadastrarLembreteComSucesso("janine", "Teste lembrete!");
 
-            idTable = tarefaPage.GetMaxIdTable();
+            idTable = ManageDBSteps.GetIdMassaTable("mantis_bug_table");
         }
         [StepDefinition(@"preencher o campo tarefa")]
         public void GivenPreencherOCampoTarefa()

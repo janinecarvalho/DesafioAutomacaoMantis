@@ -1,4 +1,5 @@
-﻿using DesafioAutomacaoMantis.Flows;
+﻿using DesafioAutomacaoMantis.DataBaseSteps;
+using DesafioAutomacaoMantis.Flows;
 using DesafioAutomacaoMantis.Helpers;
 using DesafioAutomacaoMantis.Pages;
 using NUnit.Framework;
@@ -21,6 +22,12 @@ namespace DesafioAutomacaoMantis.Steps
             
             cadastrarVersaoProjetoFlow.CadastrarVersaoProjetoComSucesso();
         }
+
+        #region Parameters of test
+        string tabela = "mantis_project_version_table";
+        string coluna = "version";
+        string textoEsperado = "Versão Final [Atualizado]";
+        #endregion
 
         [StepDefinition(@"clicar no botao alterar da versao do projeto")]
         public void GivenClicarNoBotaoAlterarDaVersaoDoProjeto()
@@ -55,7 +62,7 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"visualizar a alteracao do versao no banco")]
         public void ThenVisualizarAAlteracaoDoVersaoNoBanco()
         {
-            Assert.IsTrue(projetosPage.VisualizarAAlteracaoDoVersaoNoBanco("Versão Final [Atualizado]"));
+            Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD(tabela, coluna, textoEsperado));
         }
     }
 }

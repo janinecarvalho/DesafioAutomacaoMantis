@@ -15,7 +15,14 @@ namespace DesafioAutomacaoMantis.Steps
         {
             categoriaProjetosPage = new CategoriaProjetosPage();
         }
-        
+
+        #region Parameters of test
+        string tabela = "mantis_category_table";
+        string coluna = "name";
+        string textoEsperado = "BASE_2 [Atualizado]";
+        #endregion
+
+
         [StepDefinition(@"clicar no botao alterar")]
         public void GivenClicarNoBotaoAlterar()
         {
@@ -43,7 +50,7 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"visualizar a alteracao da categoria no banco")]
         public void ThenVisualizarAAlteracaoDaCategoriaNoBanco()
         {
-            Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD("mantis_category_table", "name", "BASE_2 [Atualizado]"));
+            Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD(tabela, coluna, textoEsperado));
         }
 
         [StepDefinition(@"clicar com java script no botao alterar")]

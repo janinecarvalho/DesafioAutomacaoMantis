@@ -14,6 +14,12 @@ namespace DesafioAutomacaoMantis.Steps
         {
             marcadorProjetosPage = new MarcadorProjetosPage();
         }
+        #region Parameters of test
+        string tabela = "mantis_tag_table";
+        string coluna = "name";
+        string textoEsperado = "DesafioB2 [Atualizado]";
+        #endregion
+
         [StepDefinition(@"clicar no marcador")]
         public void GivenClicarNoMarcador()
         {
@@ -47,7 +53,7 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"visualizar a alteracao do marcador no banco")]
         public void ThenVisualizarAAlteracaoDoMarcadorNoBanco()
         {
-            Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD("mantis_tag_table", "name", "DesafioB2 [Atualizado]"));
+            Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD(tabela, coluna, textoEsperado));
         }
 
         [StepDefinition(@"clicar com java script no marcador")]

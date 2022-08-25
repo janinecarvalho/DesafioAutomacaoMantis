@@ -18,6 +18,13 @@ namespace DesafioAutomacaoMantis.Steps
             cadastrarTarefaFlow = new CadastrarTarefaFlow();
             cadastrarTarefaFlow.CadastrarTarefaComSucesso(JsonBuilder.GetAppSettings("CATEGORIA_PROJETO"), "aleatório", "mínimo", "baixa", JsonBuilder.GetAppSettings("PERFIL_OS"), JsonBuilder.GetAppSettings("USER"), JsonBuilder.GetAppSettings("NOME_MARCADOR"), JsonBuilder.GetAppSettings("DESCRICAO_PROJETO"), "1-Executar.", "N-A", ";");
         }
+
+        #region Parameters of test
+        string tabela = "mantis_bug_table";
+        string coluna = "status";
+        string textoEsperado = "10";
+        #endregion
+
         [StepDefinition(@"clicar no botao ver tarefas")]
         public void GivenClicarNoBotaoVerTarefas()
         {
@@ -81,7 +88,7 @@ namespace DesafioAutomacaoMantis.Steps
         [Then(@"visualizar a alteracao da tarefa no banco")]
         public void ThenVisualizarAAlteracaoDaTarefaNoBanco()
         {
-            Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD("mantis_bug_table", "status", "10"));
+            Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD(tabela, coluna, textoEsperado));
         }
 
         [StepDefinition(@"clicar com java script no botao ver tarefas")]

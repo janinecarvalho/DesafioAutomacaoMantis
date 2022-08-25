@@ -13,7 +13,13 @@ namespace DesafioAutomacaoMantis.Features
         {
             projetosPage = new ProjetosPage();
         }
-        
+
+        #region Parameters of test
+        string tabela = "mantis_project_table";
+        string coluna = "name";
+        string textoEsperado = "Automacao Desafio Base2OLD";
+        #endregion
+
         [StepDefinition(@"clicar no projeto para excluir")]
         public void GivenClicarNoProjetoParaExcluir()
         {
@@ -29,7 +35,7 @@ namespace DesafioAutomacaoMantis.Features
         [StepDefinition(@"validar a exclusao no banco")]
         public void ThenValidarAExclusaoNoBanco()
         {
-            Assert.IsTrue(ManageDBSteps.ValidarExclusaoBD("mantis_project_table", "name", "Automacao Desafio Base2OLD"));
+            Assert.IsTrue(ManageDBSteps.ValidarExclusaoBD(tabela, coluna, textoEsperado));
         }
 
         [StepDefinition(@"clicar com java script no projeto para excluir")]

@@ -15,7 +15,13 @@ namespace DesafioAutomacaoMantis.Steps
         {
             projetosPage = new ProjetosPage();
         }
-        
+
+        #region Parameters of test
+        string tabela = "mantis_project_table";
+        string coluna = "name";
+        string textoEsperado = "Automacao Desafio Base2 [Atualizado]";
+        #endregion
+
         [StepDefinition(@"clicar no projeto para alterar")]
         public void GivenClicarNoProjetoParaAlterar()
         {
@@ -55,7 +61,7 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"visualizar a alteracao do projeto no banco")]
         public void ThenVisualizarAAlteracaoDoProjetoNoBanco()
         {
-            Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD("mantis_project_table", "name", "Automacao Desafio Base2 [Atualizado]"));
+            Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD(tabela, coluna, textoEsperado));
         }
 
         [StepDefinition(@"preencher com java script o campo nome do projeto atualizado")]

@@ -67,10 +67,6 @@ namespace DesafioAutomacaoMantis.Pages
             ClickJavaScript(btnCriarUsuario);
         }
 
-        public bool VizualizarAInclusaoDoUsuarioNoBanco(string usuario)
-        {
-            return ManageDBSteps.ValidarInclusaoUsuarioDB(usuario);
-        }
         #endregion
     }
 }

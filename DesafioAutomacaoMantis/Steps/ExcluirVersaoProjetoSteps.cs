@@ -1,4 +1,5 @@
-﻿using DesafioAutomacaoMantis.Flows;
+﻿using DesafioAutomacaoMantis.DataBaseSteps;
+using DesafioAutomacaoMantis.Flows;
 using DesafioAutomacaoMantis.Helpers;
 using DesafioAutomacaoMantis.Pages;
 using NUnit.Framework;
@@ -22,6 +23,12 @@ namespace DesafioAutomacaoMantis.Steps
             cadastrarVersaoProjetoFlow.CadastrarVersaoProjetoComSucesso();
         }
 
+        #region Parameters of test
+        string tabela = "mantis_project_version_table";
+        string coluna = "version";
+        string textoEsperado = "VERSAO_PROJETO";
+        #endregion
+
         [StepDefinition(@"clicar no botao apagar da versao do projeto")]
         public void GivenClicarNoBotaoApagarDaVersaoDoProjeto()
         {
@@ -37,7 +44,7 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"visualizar a exclusao da versao no banco")]
         public void ThenVisualizarAExclusaoDaVersaoNoBanco()
         {
-            Assert.True(projetosPage.VisualizarAExclusaoDaVersaoNoBanco(JsonBuilder.GetAppSettings("VERSAO_PROJETO")));
+            Assert.IsTrue(ManageDBSteps.ValidarExclusaoBD(tabela, coluna, textoEsperado));
         }
     }
 }

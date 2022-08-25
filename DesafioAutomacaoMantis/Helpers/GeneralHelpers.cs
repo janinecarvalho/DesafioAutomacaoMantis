@@ -9,7 +9,38 @@ namespace DesafioAutomacaoMantis.Helpers
 {
     public class GeneralHelpers
     {
-            public static string RetornaCaminhoDoProjeto()
+        public static string GetProjectPath()
+        {
+            string pth = System.Reflection.Assembly.GetCallingAssembly().Location;
+
+            string actualPath = pth.Substring(0, pth.LastIndexOf("bin"));
+
+            return new Uri(actualPath).LocalPath;
+        }
+
+        public static string ReplaceValueInFile(string file, string currentValue, string newValue)
+        {
+            //used to replace value in sql files
+            string text = File.ReadAllText(file);
+            text = text.Replace(currentValue, newValue);
+            return text;
+        }
+
+        public static string ReadValueInFile(string file)
+        {
+            //used to read value in sql file
+            string text = File.ReadAllText(file);
+            return text;
+        }
+
+        public static string ReplaceValuesInFile(string text, string currentValue, string newValue)
+        {
+            //used to replace values in sql files
+            text = text.Replace(currentValue, newValue);
+            return text;
+        }
+
+        public static string RetornaCaminhoDoProjeto()
             {
                 string pth = System.Reflection.Assembly.GetCallingAssembly().CodeBase;
 

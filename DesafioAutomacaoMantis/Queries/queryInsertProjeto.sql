@@ -1,0 +1,2 @@
+﻿
+INSERT INTO {table} (`id`, `name`, `status`, `enabled`, `view_state`, `access_min`, `file_path`, `description`, `category_id`, `inherit_global`) VALUES ({IdTable}, '{NomeProjeto}', 10, 1, 10, 10, '', '{DescricaoProjeto}', 1, 1)

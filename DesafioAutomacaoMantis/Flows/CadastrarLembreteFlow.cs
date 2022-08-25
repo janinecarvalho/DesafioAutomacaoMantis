@@ -1,4 +1,5 @@
-﻿using DesafioAutomacaoMantis.Pages;
+﻿using DesafioAutomacaoMantis.DataBaseSteps;
+using DesafioAutomacaoMantis.Pages;
 
 namespace DesafioAutomacaoMantis.Flows
 {
@@ -13,7 +14,7 @@ namespace DesafioAutomacaoMantis.Flows
 
         public void CadastrarLembreteComSucesso(string destinatario, string texto)
         {
-            idTable = tarefaPage.GetMaxIdTable();
+            idTable = ManageDBSteps.GetIdMassaTable("mantis_bug_table");
             tarefaPage.PreencherOCampoTarefa(idTable);
             tarefaPage.ApertarATeclaEnter();
             tarefaPage.ClicarNoBotaoEnviarUmLembrete();

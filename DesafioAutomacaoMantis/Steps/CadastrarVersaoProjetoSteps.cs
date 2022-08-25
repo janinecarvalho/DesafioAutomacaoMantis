@@ -1,4 +1,5 @@
-﻿using DesafioAutomacaoMantis.Helpers;
+﻿using DesafioAutomacaoMantis.DataBaseSteps;
+using DesafioAutomacaoMantis.Helpers;
 using DesafioAutomacaoMantis.Pages;
 using NUnit.Framework;
 using System;
@@ -15,6 +16,12 @@ namespace DesafioAutomacaoMantis.Steps
         {
             projetosPage = new ProjetosPage();
         }
+
+        #region Parameters of test
+        string tabela = "mantis_project_version_table";
+        string coluna = "version";
+        #endregion
+
         [StepDefinition(@"clicar no projeto")]
         public void GivenClicarNoProjeto()
         {
@@ -36,7 +43,7 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"visualizar a inclusao do versao no banco")]
         public void ThenVisualizarAInclusaoDoVersaoNoBanco()
         {
-            Assert.IsTrue(projetosPage.VisualizarAInclusaoDoVersaoNoBanco(JsonBuilder.GetAppSettings("VERSAO_PROJETO")));
+            Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD(tabela, coluna, JsonBuilder.GetAppSettings("VERSAO_PROJETO")));
         }
     }
 }

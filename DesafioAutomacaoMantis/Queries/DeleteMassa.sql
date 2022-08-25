@@ -1,0 +1,1 @@
+﻿DELETE FROM {table} WHERE (('{table}' = '{table}') OR ('{table}' <> 'mantis_project_table' and id > '1'))

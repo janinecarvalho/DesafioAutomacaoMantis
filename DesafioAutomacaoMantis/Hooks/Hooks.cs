@@ -40,6 +40,7 @@ namespace DesafioAutomacaoMantis.Hooks
         public static void TearDownScenario()
         {
             DriverFactory.QuitInstance();
+            ManageDBSteps.DeletarMassaDB();
         }
 
         [AfterTestRun]

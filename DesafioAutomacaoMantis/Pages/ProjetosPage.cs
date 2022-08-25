@@ -182,10 +182,7 @@ namespace DesafioAutomacaoMantis.Pages
         {
             Click(btnAdicionarVersaoProjeto); ;
         }
-        public bool VisualizarAInclusaoDoVersaoNoBanco(string value)
-        {
-            return ManageDBSteps.ValidarInclusaoAlteracaoBD("mantis_project_version_table", "version", value);
-        }
+
         #endregion
 
         #region Action Alterar Versao Projeto
@@ -209,10 +206,7 @@ namespace DesafioAutomacaoMantis.Pages
         {
             Click(btnAtualizarVersao);
         }
-        public bool VisualizarAAlteracaoDoVersaoNoBanco(string value)
-        {
-            return ManageDBSteps.ValidarInclusaoAlteracaoBD("mantis_project_version_table", "version", value);
-        }
+
         #endregion
 
         #region Action Excluir Versao Projeto
@@ -225,10 +219,7 @@ namespace DesafioAutomacaoMantis.Pages
         {
             Click(btnApagarVersaoFinal);
         }
-        public bool VisualizarAExclusaoDaVersaoNoBanco(string value)
-        {
-            return ManageDBSteps.ValidarExclusaoBD("mantis_project_version_table", "version", value);
-        }
+
         #endregion
     }
 }

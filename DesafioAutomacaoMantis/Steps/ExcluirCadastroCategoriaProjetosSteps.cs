@@ -14,7 +14,13 @@ namespace DesafioAutomacaoMantis.Steps
         {
             categoriaProjetosPage = new CategoriaProjetosPage();
         }
-        
+
+        #region Parameters of test
+        string tabela = "mantis_category_table";
+        string coluna = "id";
+        string textoEsperado = "2";
+        #endregion
+
         [StepDefinition(@"clicar no botao apagar")]
         public void GivenClicarNoBotaoApagar()
         {
@@ -30,7 +36,7 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"visualizar a exclusao da categoria no banco")]
         public void ThenVisualizarAExclusaoDaCategoriaNoBanco()
         {
-            Assert.IsTrue(ManageDBSteps.ValidarExclusaoBD("mantis_category_table", "id", "2"));
+            Assert.IsTrue(ManageDBSteps.ValidarExclusaoBD(tabela, coluna, textoEsperado));
         }
 
         [StepDefinition(@"clicar com java script no botao apagar")]

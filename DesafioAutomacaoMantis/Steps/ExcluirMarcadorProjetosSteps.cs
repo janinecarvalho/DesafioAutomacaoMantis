@@ -14,6 +14,13 @@ namespace DesafioAutomacaoMantis.Steps
         {
             marcadorProjetosPage = new MarcadorProjetosPage();
         }
+
+        #region Parameters of test
+        string tabela = "mantis_tag_table";
+        string coluna = "id";
+        string textoEsperado = "2";
+        #endregion
+
         [StepDefinition(@"clicar no botao apagar marcador")]
         public void GivenClicarNoBotaoApagarMarcador()
         {
@@ -23,7 +30,7 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"visualizar a exclusao do marcador no banco")]
         public void ThenVisualizarAExclusaoDoMarcadorNoBanco()
         {
-            Assert.IsTrue(ManageDBSteps.ValidarExclusaoBD("mantis_tag_table", "id", "2"));
+            Assert.IsTrue(ManageDBSteps.ValidarExclusaoBD(tabela, coluna, textoEsperado));
         }
 
         [StepDefinition(@"clicar com java script no botao apagar marcador")]

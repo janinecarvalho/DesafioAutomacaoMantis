@@ -129,19 +129,16 @@ namespace DesafioAutomacaoMantis.Bases
             //return element;
         }
 
-
         protected void SendKeys(By locator, string text)
         {
             WaitForElement(locator).SendKeys(text);
         }
-
         
         protected void ComboBoxSelectByVisibleText(By locator, string text)
         {
             SelectElement comboBox = new SelectElement(WaitForElement(locator));
             comboBox.SelectByText(text);
         }
-
         
         protected string GetText(By locator)
         {
@@ -149,13 +146,11 @@ namespace DesafioAutomacaoMantis.Bases
             return text;
         }
 
-        
         protected string GetValue(By locator)
         {
             string text = WaitForElement(locator).GetAttribute("value");
             return text;
         }
-
         
         protected bool ReturnIfElementIsDisplayed(By locator)
         {
@@ -163,7 +158,6 @@ namespace DesafioAutomacaoMantis.Bases
             bool result = driver.FindElement(locator).Displayed;
             return result;
         }
-
         
         protected bool ReturnIfElementIsEnabled(By locator)
         {
@@ -172,21 +166,18 @@ namespace DesafioAutomacaoMantis.Bases
             return result;
         }
 
-        
         protected bool ReturnIfElementIsSelected(By locator)
         {
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(locator));
             bool result = driver.FindElement(locator).Selected;
             return result;
         }
-
         
         protected void Clear(By locator)
         {
             WaitForElement(locator).Clear();
         }
 
-        
         protected void ClearAndSendKeys(By locator, String text)
         {
             WaitForElement(locator).Clear();
@@ -229,7 +220,6 @@ namespace DesafioAutomacaoMantis.Bases
             IWebElement element = driver.FindElement(locator);
             javaScriptExecutor.ExecuteScript("arguments[0].scrollIntoView(true);", WaitForElement(locator));
         }
-
         protected void ScrollToTop()
         {
             javaScriptExecutor.ExecuteScript("window.scrollTo(0, 0);");

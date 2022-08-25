@@ -15,6 +15,16 @@ namespace DesafioAutomacaoMantis.Steps
         {
             tarefaPage = new TarefaPage();
         }
+
+        #region Parameters of test
+        string tabela = "mantis_bug_table";
+        string coluna = "summary";
+        string textoEsperado = "DesafioB2";
+        string textoPasso = "1-Executar.";
+        string textoInfoAdc = "N-A";
+        string textoMarcador = ";";
+        #endregion
+
         [StepDefinition(@"clicar no botao criar tarefa")]
         public void GivenClicarNoBotaoCriarTarefa()
         {
@@ -71,19 +81,19 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"preencher o campo passos para reproduzir")]
         public void GivenPreencherOCampoPassosParaReproduzir()
         {
-            tarefaPage.PreencherOCampoPassosParaReproduzir("1-Executar.");
+            tarefaPage.PreencherOCampoPassosParaReproduzir(textoPasso);
         }
         
         [StepDefinition(@"preencher o campo informacao adicionais")]
         public void GivenPreencherOCampoInformacaoAdicionais()
         {
-            tarefaPage.PreencherOCampoInformacaoAdicionais("N-A");
+            tarefaPage.PreencherOCampoInformacaoAdicionais(textoInfoAdc);
         }
         
         [StepDefinition(@"preencher o campo aplicar marcadores")]
         public void GivenPreencherOCampoAplicarMarcadores()
         {
-            tarefaPage.PreencherOCampoAplicarMarcadores(";");
+            tarefaPage.PreencherOCampoAplicarMarcadores(textoMarcador);
         }
         
         [StepDefinition(@"marcar o check continuar relatando")]
@@ -101,7 +111,7 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"visualizar a inclusao da tarefa no banco")]
         public void ThenVisualizarAInclusaoDaTarefaNoBanco()
         {
-            Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD("mantis_bug_table", "summary", "DesafioB2"));
+            Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD(tabela, coluna, textoEsperado));
         }
 
         [StepDefinition(@"clicar com java script no botao criar tarefa")]
@@ -125,19 +135,19 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"preencher com java script o campo passos para reproduzir")]
         public void GivenPreencherComJavaScriptOCampoPassosParaReproduzir()
         {
-            tarefaPage.PreencherComJavaScriptOCampoPassosParaReproduzir("1-Executar.");
+            tarefaPage.PreencherComJavaScriptOCampoPassosParaReproduzir(textoPasso);
         }
 
         [StepDefinition(@"preencher com java script o campo informacao adicionais")]
         public void GivenPreencherComJavaScriptOCampoInformacaoAdicionais()
         {
-            tarefaPage.PreencherComJavaScriptOCampoInformacaoAdicionais("N-A");
+            tarefaPage.PreencherComJavaScriptOCampoInformacaoAdicionais(textoInfoAdc);
         }
 
         [StepDefinition(@"preencher com java script o campo aplicar marcadores")]
         public void GivenPreencherComJavaScriptOCampoAplicarMarcadores()
         {
-            tarefaPage.PreencherComJavaScriptOCampoAplicarMarcadores(";");
+            tarefaPage.PreencherComJavaScriptOCampoAplicarMarcadores(textoMarcador);
         }
 
         [StepDefinition(@"clicar com java script no botao criar nova tarefa")]

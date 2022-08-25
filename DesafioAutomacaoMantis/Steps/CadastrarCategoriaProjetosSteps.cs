@@ -16,7 +16,12 @@ namespace DesafioAutomacaoMantis.Steps
             categoriaProjetosPage = new CategoriaProjetosPage();
         }
 
-        
+        #region Parameters of test
+        string tabela = "mantis_category_table";
+        string coluna = "name";
+        string textoEsperado = "BASE_2";
+        #endregion
+
         [StepDefinition(@"preencher o campo nome da categoria")]
         public void GivenPreencherOCampoNomeDaCategoria()
         {
@@ -32,7 +37,7 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"visualizar a inclusao da categoria no banco")]
         public void ThenVisualizarAInclusaoDaCategoriaNoBanco()
         {
-            Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD("mantis_category_table", "name", "BASE_2"));
+            Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD(tabela, coluna, textoEsperado));
         }
 
         [StepDefinition(@"preencher com java script o campo nome da categoria")]

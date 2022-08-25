@@ -1,4 +1,5 @@
-﻿using DesafioAutomacaoMantis.Helpers;
+﻿using DesafioAutomacaoMantis.DataBaseSteps;
+using DesafioAutomacaoMantis.Helpers;
 using DesafioAutomacaoMantis.Pages;
 using NUnit.Framework;
 using System;
@@ -16,6 +17,11 @@ namespace DesafioAutomacaoMantis.Steps
             convidarUsuarioPage = new ConvidarUsuarioPage();
         }
 
+        #region Parameters of test
+        string texto = "NovoUsuario";
+        string textoAtualizado = "Novo";
+        #endregion
+
         [StepDefinition(@"clicar no botao convidar usuarios")]
         public void GivenClicarNoBotaoConvidarUsuarios()
         {
@@ -25,19 +31,19 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"preencher o campo nome do usuario")]
         public void GivenPreencherOCampoNomeDoUsuario()
         {
-            convidarUsuarioPage.PreencherOCampoNomeDoUsuario(JsonBuilder.GetAppSettings("USER") + "Novo");
+            convidarUsuarioPage.PreencherOCampoNomeDoUsuario(JsonBuilder.GetAppSettings("USER") + textoAtualizado);
         }
         
         [StepDefinition(@"preencher o campo nome verdadeiro")]
         public void GivenPreencherOCampoNomeVerdadeiro()
         {
-            convidarUsuarioPage.PreencherOCampoNomeVerdadeiro("NovoUsuario");
+            convidarUsuarioPage.PreencherOCampoNomeVerdadeiro(texto);
         }
 
         [StepDefinition(@"preencher o campo email do usuario")]
         public void GivenPreencherOCampoEmailDoUsuario()
         {
-            convidarUsuarioPage.PreencherOCampoEmailDoUsuario("Novo" + JsonBuilder.GetAppSettings("EMAIL"));
+            convidarUsuarioPage.PreencherOCampoEmailDoUsuario(textoAtualizado + JsonBuilder.GetAppSettings("EMAIL"));
         }
 
         [StepDefinition(@"clicar no botao criar usuario")]
@@ -55,19 +61,19 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"preencher com java script o campo nome do usuario")]
         public void GivenPreencherComJavaScriptOCampoNomeDoUsuario()
         {
-            convidarUsuarioPage.PreencherComJavaScriptOCampoNomeDoUsuario(JsonBuilder.GetAppSettings("USER") + "Novo");
+            convidarUsuarioPage.PreencherComJavaScriptOCampoNomeDoUsuario(JsonBuilder.GetAppSettings("USER") + textoAtualizado);
         }
 
         [StepDefinition(@"preencher com java script o campo nome verdadeiro")]
         public void GivenPreencherComJavaScriptOCampoNomeVerdadeiro()
         {
-            convidarUsuarioPage.PreencherComJavaScriptOCampoNomeVerdadeiro("NovoUsuario");
+            convidarUsuarioPage.PreencherComJavaScriptOCampoNomeVerdadeiro(texto);
         }
 
         [StepDefinition(@"preencher com java script o campo email do usuario")]
         public void GivenPreencherComJavaScriptOCampoEmailDoUsuario()
         {
-            convidarUsuarioPage.PreencherComJavaScriptOCampoEmailDoUsuario("Novo" + JsonBuilder.GetAppSettings("EMAIL"));
+            convidarUsuarioPage.PreencherComJavaScriptOCampoEmailDoUsuario(textoAtualizado + JsonBuilder.GetAppSettings("EMAIL"));
         }
 
         [StepDefinition(@"clicar com java script no botao criar usuario")]
@@ -79,7 +85,7 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"visualizar a inclusao do usuario no banco")]
         public void ThenVisualizarAInclusaoDoUsuarioNoBanco()
         {
-            Assert.IsTrue(convidarUsuarioPage.VizualizarAInclusaoDoUsuarioNoBanco(JsonBuilder.GetAppSettings("USER") + "Novo"));
+            Assert.IsTrue(ManageDBSteps.ValidarInclusaoUsuarioDB(JsonBuilder.GetAppSettings("USER") + textoAtualizado));
         }
     }
 }

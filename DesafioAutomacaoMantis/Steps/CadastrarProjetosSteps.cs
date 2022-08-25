@@ -18,7 +18,13 @@ namespace DesafioAutomacaoMantis.Steps
             loginFlow = new LoginFlow();
             projetosPage = new ProjetosPage();
         }
-        
+
+        #region Parameters of test
+        string tabela = "mantis_project_table";
+        string coluna = "name";
+        string textoEsperado = "Automacao Desafio Base2";
+        #endregion
+
         [StepDefinition(@"que estou na tela inicial")]
         public void GivenQueEstouNaTelaInicial()
         {
@@ -76,7 +82,7 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"visualizar a inclusao do projeto no banco")]
         public void ThenVisualizarAInclusaoDoProjetoNoBanco()
         {
-            Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD("mantis_project_table", "name", "Automacao Desafio Base2"));
+            Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD(tabela, coluna, textoEsperado));
         }
 
 

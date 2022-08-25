@@ -1,6 +1,8 @@
-﻿using DesafioAutomacaoMantis.Flows;
+﻿using DesafioAutomacaoMantis.DataBaseSteps;
+using DesafioAutomacaoMantis.Flows;
 using DesafioAutomacaoMantis.Helpers;
 using DesafioAutomacaoMantis.Pages;
+using NUnit.Framework;
 using System;
 using TechTalk.SpecFlow;
 
@@ -15,6 +17,12 @@ namespace DesafioAutomacaoMantis.Steps
         {
             tarefaPage = new TarefaPage();
         }
+
+        #region Parameters of test
+        string tabela = "mantis_bugnote_text_table";
+        string coluna = "note";
+        string textoEsperado = "Teste lembrete! [Atualizado]!";
+        #endregion
 
         [StepDefinition(@"clicar no botao apagar lembrete")]
         public void GivenClicarNoBotaoApagarLembrete()
@@ -31,7 +39,7 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"visualizar a exclusao do lembrete no banco")]
         public void ThenVisualizarAExclusaoDoLembreteNoBanco()
         {
-            tarefaPage.VisualizarAExclusaoDoLembreteNoBanco("Teste lembrete! [Atualizado]!");
+            Assert.IsTrue(ManageDBSteps.ValidarExclusaoBD(tabela, coluna, textoEsperado));
         }
     }
 }

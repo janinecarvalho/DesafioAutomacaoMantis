@@ -15,6 +15,13 @@ namespace DesafioAutomacaoMantis.Steps
         {
             CamposPersonalizadosProjetosPage = new CamposPersonalizadosProjetosPage();
         }
+
+        #region Parameters of test
+        string tabela = "mantis_custom_field_table";
+        string coluna = "name";
+        string textoEsperado = "PipelinejanineOLD";
+        #endregion
+
         [StepDefinition(@"clicar no campo personalizado para alterar")]
         public void GivenClicarNoCampoPersonalizadoParaAlterar()
         {
@@ -72,7 +79,7 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"visualizar a alteracao do campo personalizado no banco")]
         public void ThenVisualizarAAlteracaoDoCampoPersonalizadoNoBanco()
         {
-            Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD("mantis_custom_field_table", "name", "PipelinejanineOLD"));
+            Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD(tabela, coluna, textoEsperado));
         }
 
         [StepDefinition(@"clicar com java script no campo personalizado para alterar")]

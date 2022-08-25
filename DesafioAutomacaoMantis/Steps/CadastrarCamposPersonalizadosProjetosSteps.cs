@@ -14,6 +14,13 @@ namespace DesafioAutomacaoMantis.Steps
         {
             CamposPersonalizadosProjetosPage = new CamposPersonalizadosProjetosPage();
         }
+
+        #region Parameters of test
+        string tabela = "mantis_user_profile_table";
+        string coluna = "description";
+        string textoEsperado = "Projeto Desafio Automacao Base2 - Selenium Specflow .NetCore.";
+        #endregion
+
         [StepDefinition(@"clicar na aba gerenciar campos personalizados")]
         public void GivenClicarNaAbaGerenciarCamposPersonalizados()
         {
@@ -125,7 +132,7 @@ namespace DesafioAutomacaoMantis.Steps
         [Then(@"visualizar a inclusao do campo personalizado no banco")]
         public void ThenVisualizarAInclusaoDoCampoPersonalizadoNoBanco()
         {
-            Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD("mantis_user_profile_table", "description", "Projeto Desafio Automacao Base2 - Selenium Specflow .NetCore."));
+            Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD(tabela, coluna, textoEsperado));
         }
 
         [StepDefinition(@"clicar com java script na aba gerenciar campos personalizados")]

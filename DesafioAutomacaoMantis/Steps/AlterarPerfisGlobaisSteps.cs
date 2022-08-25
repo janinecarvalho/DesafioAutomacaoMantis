@@ -14,6 +14,13 @@ namespace DesafioAutomacaoMantis.Steps
         {
             perfisGlobaisPage = new PerfisGlobaisPage();
         }
+
+        #region Parameters of test
+        string tabela = "mantis_user_profile_table";
+        string coluna = "description";
+        string textoEsperado = "Projeto Desafio Automacao Base2 - Selenium Specflow .NetCore. [Atualizado]";
+        #endregion
+
         [StepDefinition(@"clicar no radiobox editar perfil")]
         public void GivenClicarNoRadioboxEditarPerfil()
         {
@@ -65,7 +72,7 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"visualizar a alteracao do perfil no banco")]
         public void ThenVisualizarAAlteracaoDoPerfilNoBanco()
         {
-            Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD("mantis_user_profile_table", "description", "Projeto Desafio Automacao Base2 - Selenium Specflow .NetCore. [Atualizado]"));
+            Assert.IsTrue(ManageDBSteps.ValidarInclusaoAlteracaoBD(tabela, coluna, textoEsperado));
         }
 
         [StepDefinition(@"clicar com java script no botao enviar")]

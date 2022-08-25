@@ -14,6 +14,14 @@ namespace DesafioAutomacaoMantis.Steps
         {
             tarefaPage = new TarefaPage();
         }
+
+        #region Parameters of test
+        string tabela = "mantis_bug_table";
+        string coluna = "id";
+        string texto = "Apagar";
+        string textoEsperado = "2";
+        #endregion
+
         [StepDefinition(@"clicar no checkbox da tarefa a excluir")]
         public void GivenClicarNoCheckboxDaTarefaAExcluir()
         {
@@ -23,7 +31,7 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"selecionar o selecionar tudo")]
         public void GivenSelecionarOSelecionarTudo()
         {
-            tarefaPage.SelecionarOSelecionarTudo("Apagar");
+            tarefaPage.SelecionarOSelecionarTudo(texto);
         }
         
         [StepDefinition(@"clicar no botao ok")]
@@ -41,7 +49,7 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"validar a exclusao da tarefa no banco")]
         public void ThenValidarAExclusaoDaTarefaNoBanco()
         {
-            Assert.IsTrue(ManageDBSteps.ValidarExclusaoBD("mantis_bug_table", "id", "2"));
+            Assert.IsTrue(ManageDBSteps.ValidarExclusaoBD(tabela, coluna, textoEsperado));
         }
 
         [StepDefinition(@"clicar com java script no botao ok")]

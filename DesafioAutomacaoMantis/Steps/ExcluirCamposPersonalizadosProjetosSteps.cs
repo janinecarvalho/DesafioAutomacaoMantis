@@ -14,6 +14,13 @@ namespace DesafioAutomacaoMantis.Steps
         {
             CamposPersonalizadosProjetosPage = new CamposPersonalizadosProjetosPage();
         }
+
+        #region Parameters of test
+        string tabela = "mantis_custom_field_table";
+        string coluna = "id";
+        string textoEsperado = "2";
+        #endregion
+
         [StepDefinition(@"clicar no campo personalizado para excluir")]
         public void GivenClicarNoCampoPersonalizadoParaExcluir()
         {
@@ -35,7 +42,7 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"visualizar a exclusao do campo personalizado no banco")]
         public void ThenVisualizarAExclusaoDoCampoPersonalizadoNoBanco()
         {
-            Assert.IsTrue(ManageDBSteps.ValidarExclusaoBD("mantis_custom_field_table", "id", "2"));
+            Assert.IsTrue(ManageDBSteps.ValidarExclusaoBD(tabela, coluna, textoEsperado));
         }
 
         [StepDefinition(@"clicar com java script no campo personalizado para excluir")]

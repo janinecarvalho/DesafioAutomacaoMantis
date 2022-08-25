@@ -16,6 +16,11 @@ namespace DesafioAutomacaoMantis.Steps
             recuperarSenhaPage = new RecuperarSenhaPage();
         }
 
+        #region Parameters of test
+        string textoEsperado = "http://127.0.0.1:8989/login_page.php?return=lost_pwd.php";
+        #endregion
+
+
         [StepDefinition(@"clicar no botao criar nova conta")]
         public void GivenClicarNoBotaoCriarNovaConta()
         {
@@ -49,7 +54,7 @@ namespace DesafioAutomacaoMantis.Steps
         [StepDefinition(@"visualizar a tela de login")]
         public void ThenVisualizarATelaDeLogin()
         {
-            Assert.AreEqual("http://127.0.0.1:8989/login_page.php?return=lost_pwd.php", recuperarSenhaPage.VisualizarATelaDeLogin());
+            Assert.AreEqual(textoEsperado, recuperarSenhaPage.VisualizarATelaDeLogin());
         }
     }
 }

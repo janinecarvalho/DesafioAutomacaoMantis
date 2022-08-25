@@ -1,0 +1,1 @@
+﻿INSERT INTO {table} (`id`, `bug_id`, `reporter_id`, `bugnote_text_id`, `view_state`, `note_type`, `note_attr`, `time_tracking`, `last_modified`, `date_submitted`) VALUES({IdTable}, {IdTableTarefaProjeto}, 2, {IdTableLembreteProjeto}, 10, 0, '', 0, 1657746151, 1657746151)

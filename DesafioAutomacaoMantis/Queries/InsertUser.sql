@@ -1,0 +1,2 @@
+﻿INSERT INTO mantis_user_table (`id`, `username`, `realname`, `email`, `password`, `enabled`, `protected`, `access_level`, `login_count`, `lost_password_request_count`, `failed_login_count`, `cookie_string`, `last_visit`, `date_created`) 
+VALUES(2, '{user}', '', 'janinelost@hotmail.com', '{password}', 1, 0, 90, 5, 0, 0, 'EvWotLaIN7n_sbUV2p5dNFVj-KfYV-Q0dT0vPpjdk9Wrghe13GvOaq6SxwyBjna9', 1638554263, 1638554138)

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Data;
-using MySql.Data.MySqlClient;
 using DesafioAutomacaoMantis.Helpers;
 using System.Collections.Generic;
 
@@ -8,83 +6,6 @@ namespace DesafioAutomacaoMantis.DataBaseSteps
 {
     public class ManageDBSteps
     {
-        public static void DeleteUserDB(string user)
-        {
-            try
-            {
-                var connString = $"Server='{JsonBuilder.GetAppSettings("DB_URL")}';Database='{JsonBuilder.GetAppSettings("DB_NAME")}';Uid='{JsonBuilder.GetAppSettings("DB_USER")}';Pwd='{JsonBuilder.GetAppSettings("DB_PASSWORD")}'";
-                var connection = new MySqlConnection(connString);
-                var command = connection.CreateCommand();
-
-                connection.Open();
-
-                command.CommandText = $@"DELETE FROM `mantis_user_table` WHERE `username`<>'{user}'; ";
-                command.ExecuteNonQuery();
-
-                connection.Close();
-            }
-
-            catch (Exception e)
-            {
-                throw new Exception("Erro na execução ou conexão: =>", e);
-            }
-        }
-        public static void InsertUserDB(string user, string password)
-        {
-            try
-            {
-                var connString = "Server=localhost;Database=bugtracker;Uid=root;Pwd=root";
-                var connection = new MySqlConnection(connString);
-                var command = connection.CreateCommand();
-
-                connection.Open();
-
-                command.CommandText = $@"INSERT INTO `mantis_user_table` (`id`, `username`, `realname`, `email`, `password`, `enabled`, `protected`, `access_level`, `login_count`, `lost_password_request_count`, `failed_login_count`, `cookie_string`, `last_visit`, `date_created`) 
-                                        VALUES(2, '{user}', '', 'janinelost@hotmail.com', '{password}', 1, 0, 90, 5, 0, 0, 'EvWotLaIN7n_sbUV2p5dNFVj-KfYV-Q0dT0vPpjdk9Wrghe13GvOaq6SxwyBjna9', 1638554263, 1638554138); ";
-                command.ExecuteNonQuery();
-
-                connection.Close();
-            }
-
-            catch (Exception e)
-            {
-                throw new Exception("Erro na execução ou conexão: =>", e);
-            }
-        }
-
-        public static bool ValidarInclusaoUsuarioDB(string usuario)
-        {
-            var query = $@"SELECT * FROM mantis_user_table WHERE username = '{usuario}'";
-
-            try
-            {
-                var connString = "Server=localhost;Database=bugtracker;Uid=root;Pwd=root";
-                var connection = new MySqlConnection(connString);
-                var command = connection.CreateCommand();
-
-                connection.Open();
-
-                command.CommandText = query;
-
-                MySqlDataReader dataReader = command.ExecuteReader();
-
-                if (dataReader.HasRows)
-                {
-                    connection.Close();
-                    return true;
-                }
-
-                else
-                {
-                    connection.Close();
-                    return false;
-                }
-            }
-            catch (Exception e)
-            {
-                throw new Exception("Erro na execução ou conexão: =>", e);
-            }
-        }
 
         private static String tableCategoriaProjeto = "mantis_category_table";
         private static String tablePerfilGlobal = "mantis_user_profile_table";
@@ -96,30 +17,175 @@ namespace DesafioAutomacaoMantis.DataBaseSteps
         private static String tableLembreteProjeto = "mantis_bugnote_text_table";
         private static String tableVersaoProjeto = "mantis_project_version_table";
 
-        private static String queryInsertProjeto = $"INSERT INTO `{tableProjeto}` (`id`, `name`, `status`, `enabled`, `view_state`, `access_min`, `file_path`, `description`, `category_id`, `inherit_global`) VALUES ({GetLastIdTable(tableProjeto)}, '{JsonBuilder.GetAppSettings("NOME_PROJETO") + "OLD"}', 10, 1, 10, 10, '', '{JsonBuilder.GetAppSettings("DESCRICAO_PROJETO")}', 1, 1);";
-        private static String queryInsertCategoriaProjeto = $"INSERT INTO `{tableCategoriaProjeto}` (`id`, `project_id`, `user_id`, `name`, `status`) VALUES ({GetLastIdTable(tableCategoriaProjeto)}, 0, 0, 'BASE_2', 0);";
-        private static String queryInsertMarcadorProjeto = $"INSERT INTO `{tableMarcadorProjeto}` (`id`, `user_id`, `name`, `description`, `date_created`, `date_updated`) VALUES ({GetLastIdTable(tableMarcadorProjeto)}, 2, '{JsonBuilder.GetAppSettings("NOME_MARCADOR")}', '{JsonBuilder.GetAppSettings("DESCRICAO_MARCADOR")}', 1656971549, 1656971549);";
-        private static String queryInsertCampoPersonalizadoProjeto = $"INSERT INTO `{tableCampoPersonalizadoProjeto}` (`id`, `name`, `type`, `possible_values`, `default_value`, `valid_regexp`, `access_level_r`, `access_level_rw`, `length_min`, `length_max`, `require_report`, `require_update`, `display_report`, `display_update`, `require_resolved`, `display_resolved`, `display_closed`, `require_closed`, `filter_by`) VALUES ({GetLastIdTable(tableCampoPersonalizadoProjeto)}, 'PipelinejanineOLD', 0, '', '', '', 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);";
-        private static String queryInsertPerfilGlobal = $"INSERT INTO `{tablePerfilGlobal}` (`id`, `user_id`, `platform`, `os`, `os_build`, `description`) VALUES ({GetLastIdTable(tablePerfilGlobal)}, 0, '{JsonBuilder.GetAppSettings("PLATAFORMA")}', '{JsonBuilder.GetAppSettings("OS")}', '{JsonBuilder.GetAppSettings("VERSAO_OS")}', '{JsonBuilder.GetAppSettings("DESCRICAO_PROJETO")}');";
-        private static String queryInsertTableLembrete = $"INSERT INTO `{tableLembrete}` (`id`, `bug_id`, `reporter_id`, `bugnote_text_id`, `view_state`, `note_type`, `note_attr`, `time_tracking`, `last_modified`, `date_submitted`) VALUES({ GetLastIdTable(tableLembrete)}, {GetLastIdTable(tableTarefaProjeto)}, 2, {GetLastIdTable(tableLembreteProjeto)}, 10, 0, '', 0, 1657746151, 1657746151);";
-        private static String queryInsertTableLembreteProjeto = $"INSERT INTO `{tableLembreteProjeto}` (`id`, `note`) VALUES({ GetLastIdTable(tableLembreteProjeto)}, 'Teste agora!');";
-        private static String queryInsertVersaoProjeto = $"INSERT INTO `{tableVersaoProjeto}` (`id`, `project_id`, `version`, `description`, `released`, `obsolete`, `date_order`) VALUES ({GetLastIdTable(tableVersaoProjeto)}, 2, 'Versão Final', '', 0, 0, 1657647552);";
+        public static void DeleteUserDB(string user)
+        {
+            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/DeleteUser.sql";
 
+            string query = GeneralHelpers.ReplaceValueInFile(queryFile, "{user}", user);
+
+            DataBaseHelpers.ExecuteQueryDB(query);
+
+        }
+        public static void InsertUserDB(string user, string password)
+        {
+            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/InsertUser.sql";
+
+            string query = GeneralHelpers.ReadValueInFile(queryFile);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query,"{user}",user);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{password}", password);
+
+            DataBaseHelpers.ExecuteQueryDB(query);
+        }
+
+        public static bool ValidarInclusaoUsuarioDB(string usuario)
+        {
+            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/ValidarInclusaoUser.sql";
+
+            string query = GeneralHelpers.ReplaceValueInFile(queryFile, "{usuario}", usuario);
+
+            return DataBaseHelpers.ExecuteQueryDBWithReturnBool(query);
+        }
+
+        private static string GetQueryInsertProjeto()
+        {
+            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/queryInsertProjeto.sql";
+
+            string query = GeneralHelpers.ReadValueInFile(queryFile);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{table}", tableProjeto);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{IdTable}", GetLastIdTable(tableProjeto));
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{NomeProjeto}", JsonBuilder.GetAppSettings("NOME_PROJETO") + "OLD");
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{DescricaoProjeto}", JsonBuilder.GetAppSettings("DESCRICAO_PROJETO"));
+
+            return query;
+        }
+
+        private static string GetQueryInsertCategoriaProjeto()
+        {
+            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/queryInsertCategoriaProjeto.sql";
+
+            string query = GeneralHelpers.ReadValueInFile(queryFile);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{table}", tableCategoriaProjeto);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{IdTable}", GetLastIdTable(tableCategoriaProjeto));
+
+            return query;
+        }
+
+        private static string GetQueryInsertMarcadorProjeto()
+        {
+            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/queryInsertMarcadorProjeto.sql";
+
+            string query = GeneralHelpers.ReadValueInFile(queryFile);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{table}", tableMarcadorProjeto);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{IdTable}", GetLastIdTable(tableMarcadorProjeto));
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{NOME_MARCADOR}", JsonBuilder.GetAppSettings("NOME_MARCADOR"));
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{DESCRICAO_MARCADOR}", JsonBuilder.GetAppSettings("DESCRICAO_MARCADOR"));
+
+            return query;
+        }
+
+        private static string GetQueryInsertCampoPersonalizadoProjeto()
+        {
+            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/queryInsertCampoPersonalizadoProjeto.sql";
+
+            string query = GeneralHelpers.ReadValueInFile(queryFile);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{table}", tableCampoPersonalizadoProjeto);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{IdTable}", GetLastIdTable(tableCampoPersonalizadoProjeto));
+
+            return query;
+        }
+
+        private static string GetQueryInsertPerfilGlobal()
+        {
+            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/queryInsertPerfilGlobal.sql";
+
+            string query = GeneralHelpers.ReadValueInFile(queryFile);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{table}", tablePerfilGlobal);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{IdTable}", GetLastIdTable(tablePerfilGlobal));
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{PLATAFORMA}", JsonBuilder.GetAppSettings("PLATAFORMA"));
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{OS}", JsonBuilder.GetAppSettings("OS"));
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{VERSAO_OS}", JsonBuilder.GetAppSettings("VERSAO_OS"));
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{DESCRICAO_PROJETO}", JsonBuilder.GetAppSettings("DESCRICAO_PROJETO"));
+
+            return query;
+        }
+
+        private static string GetQueryInsertTableLembrete()
+        {
+            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/queryInsertTableLembrete.sql";
+
+            string query = GeneralHelpers.ReadValueInFile(queryFile);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{table}", tableLembrete);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{IdTable}", GetLastIdTable(tableLembrete));
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{IdTableTarefaProjeto}", GetLastIdTable(tableTarefaProjeto));
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{IdTableLembreteProjeto}", GetLastIdTable(tableLembreteProjeto));
+
+            return query;
+        }
+
+        private static string GetQueryInsertTableLembreteProjeto()
+        {
+            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/queryInsertTableLembreteProjeto.sql";
+
+            string query = GeneralHelpers.ReadValueInFile(queryFile);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{table}", tableLembreteProjeto);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{IdTable}", GetLastIdTable(tableLembreteProjeto));
+
+            return query;
+        }
+
+        private static string GetQueryInsertVersaoProjeto()
+        {
+            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/queryInsertVersaoProjeto.sql";
+
+            string query = GeneralHelpers.ReadValueInFile(queryFile);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{table}", tableVersaoProjeto);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{IdTable}", GetLastIdTable(tableVersaoProjeto));
+
+            return query;
+        }
 
         private static List<string> listAllQueryInsert()
         {
-            List<string> listQuery = new List<string>();
+            List<string> listAllQuery = new List<string>();
 
-            listQuery.Add(queryInsertProjeto);
-            listQuery.Add(queryInsertCategoriaProjeto);
-            listQuery.Add(queryInsertMarcadorProjeto);
-            listQuery.Add(queryInsertCampoPersonalizadoProjeto);
-            listQuery.Add(queryInsertPerfilGlobal);
-            listQuery.Add(queryInsertTableLembrete);
-            listQuery.Add(queryInsertTableLembreteProjeto);
-            listQuery.Add(queryInsertVersaoProjeto);
+            listAllQuery.Add(GetQueryInsertProjeto());
+            listAllQuery.Add(GetQueryInsertCategoriaProjeto());
+            listAllQuery.Add(GetQueryInsertMarcadorProjeto());
+            listAllQuery.Add(GetQueryInsertCampoPersonalizadoProjeto());
+            listAllQuery.Add(GetQueryInsertPerfilGlobal());
+            listAllQuery.Add(GetQueryInsertTableLembrete());
+            listAllQuery.Add(GetQueryInsertTableLembreteProjeto());
+            listAllQuery.Add(GetQueryInsertVersaoProjeto());
 
-            return listQuery;
+            return listAllQuery;
         }
         private static List<string> listAllQueryDelete()
         {
@@ -140,80 +206,69 @@ namespace DesafioAutomacaoMantis.DataBaseSteps
 
         private static string GetLastIdTable(string table)
         {
-            var query = $@"SELECT AUTO_INCREMENT FROM information_schema.tables WHERE table_name = '{table}' AND table_schema = 'bugtracker'";
+            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/GetLastIdTable.sql";
 
-            try
-            {
-                var connString = "Server=localhost;Database=bugtracker;Uid=root;Pwd=root";
-                var connection = new MySqlConnection(connString);
-                var command = connection.CreateCommand();
+            string query = GeneralHelpers.ReplaceValueInFile(queryFile, "{table}", table);
 
-                connection.Open();
-
-                command.CommandText = query;
-
-                var id_table = command.ExecuteScalar().ToString();
-
-                connection.Close();
-
-                return id_table;
-            }
-            catch (Exception e)
-            {
-                throw new Exception("Erro na execução ou conexão: =>", e);
-            }
+            return DataBaseHelpers.ExecuteQueryDBWithReturnString(query);
         }        
         
         public static string GetIdMassaTable(string table)
         {
-            var query = $@"SELECT ID FROM {table} ORDER BY ID DESC LIMIT 1";
+            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/GetIdMassaTable.sql";
 
-            try
-            {
-                var connString = "Server=localhost;Database=bugtracker;Uid=root;Pwd=root";
-                var connection = new MySqlConnection(connString);
-                var command = connection.CreateCommand();
+            string query = GeneralHelpers.ReplaceValueInFile(queryFile, "{table}", table);
 
-                connection.Open();
-
-                command.CommandText = query;
-
-                string id_table = command.ExecuteScalar().ToString();
-
-                connection.Close();
-
-                return id_table;
-            }
-            catch (Exception e)
-            {
-                throw new Exception("Erro na execução ou conexão: =>", e);
-            }
+            return DataBaseHelpers.ExecuteQueryDBWithReturnString(query);
         }
 
-        private static void DeletarMassaDB()
+        public static void DeletarMassaDB()
         {
             var listAll = listAllQueryDelete();
 
-            try
+            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/DeleteMassa.sql";
+
+            string query;
+
+            foreach (string table in listAll)
             {
-                var connString = "Server=localhost;Database=bugtracker;Uid=root;Pwd=root";
-                var connection = new MySqlConnection(connString);
-                var command = connection.CreateCommand();
+                query = GeneralHelpers.ReplaceValueInFile(queryFile, "{table}", table);
 
-                connection.Open();
-
-                foreach (string table in listAll)
-                {
-                    command.CommandText = $@"DELETE FROM `{table}` WHERE `id`>'1'; "; ;
-                    command.ExecuteNonQuery();
-                }
-
-                connection.Close();
+                DataBaseHelpers.ExecuteQueryDB(query);
             }
-            catch(Exception e)
-            {
-                throw new Exception("Erro na execução ou conexão: =>", e);
-            }
+        }
+
+        public static bool ValidarExclusaoBD(string table, string field, string value)
+        {
+            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/ValidarExclusaoValue.sql";
+
+            string query = GeneralHelpers.ReadValueInFile(queryFile);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{table}", table);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{field}", field);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{value}", value);
+
+            if (DataBaseHelpers.ExecuteQueryDBWithReturnBool(query))
+                return false;
+            else
+                return true;
+        }        
+        public static bool ValidarInclusaoAlteracaoBD(string table, string field, string value)
+        {
+            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/ValidarInclusaoAlteracaoValue.sql";
+
+            string query = GeneralHelpers.ReadValueInFile(queryFile);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{table}", table);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{field}", field);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{value}", value);
+
+            return DataBaseHelpers.ExecuteQueryDBWithReturnBool(query);
+
         }
 
         public static void InserirMassaDB()
@@ -222,94 +277,9 @@ namespace DesafioAutomacaoMantis.DataBaseSteps
 
             var listAll = listAllQueryInsert();
 
-            try
+            foreach (string query in listAll)
             {
-                var connString = "Server=localhost;Database=bugtracker;Uid=root;Pwd=root";
-                var connection = new MySqlConnection(connString);
-                var command = connection.CreateCommand();
-
-                connection.Open();
-
-                foreach(string query in listAll)
-                {
-                    command.CommandText = query;
-                    command.ExecuteNonQuery();
-                }
-
-                connection.Close();
-            }
-            catch (Exception e)
-            {
-                throw new Exception("Erro na execução ou conexão: =>", e);
-            }
-        }
-
-        public static bool ValidarExclusaoBD(string table, string field, string value)
-        {
-            var query = $@"SELECT * FROM {table} WHERE {field} = '{value}'";
-
-            try
-            {
-                var connString = "Server=localhost;Database=bugtracker;Uid=root;Pwd=root";
-                var connection = new MySqlConnection(connString);
-                var command = connection.CreateCommand();
-
-                connection.Open();
-
-                command.CommandText = query;
-
-                MySqlDataReader dataReader = command.ExecuteReader();
-
-                connection.Close();
-
-                if (dataReader.HasRows)
-                {
-                    connection.Close();
-                    return false;
-                }
-
-                else
-                {
-                    connection.Close();
-                    return true;
-                }
-            }
-            catch(Exception e)
-            {
-                throw new Exception("Erro na execução ou conexão: =>", e);
-            }
-        }        
-        public static bool ValidarInclusaoAlteracaoBD(string table, string field, string value)
-        {
-            var query = $@"SELECT * FROM {table} WHERE {field} = '{value}'";
-
-            try
-            {
-                var connString = "Server=localhost;Database=bugtracker;Uid=root;Pwd=root";
-                var connection = new MySqlConnection(connString);
-                var command = connection.CreateCommand();
-
-                connection.Open();
-
-                command.CommandText = query;
-
-                MySqlDataReader dataReader = command.ExecuteReader();
-
-                if (dataReader.HasRows)
-                {
-                    connection.Close();
-                    return true;
-                }
-
-                else
-                {
-                    connection.Close();
-                    return false;
-                }
-            }
-            catch (Exception e)
-            {
-                throw new Exception("Erro na execução ou conexão: =>", e);
+                DataBaseHelpers.ExecuteQueryDB(query);
             }
         }
     }
