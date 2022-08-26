@@ -6,7 +6,7 @@ namespace DesafioAutomacaoMantis.DataBaseSteps
 {
     public class ManageDBSteps
     {
-
+        private static String tableUser = "mantis_user_table";
         private static String tableCategoriaProjeto = "mantis_category_table";
         private static String tablePerfilGlobal = "mantis_user_profile_table";
         private static String tableMarcadorProjeto = "mantis_tag_table";
@@ -31,6 +31,8 @@ namespace DesafioAutomacaoMantis.DataBaseSteps
             string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/InsertUser.sql";
 
             string query = GeneralHelpers.ReadValueInFile(queryFile);
+
+            query = GeneralHelpers.ReplaceValuesInFile(query, "{IdTable}", GetLastIdTable(tableUser));
 
             query = GeneralHelpers.ReplaceValuesInFile(query,"{user}",user);
 

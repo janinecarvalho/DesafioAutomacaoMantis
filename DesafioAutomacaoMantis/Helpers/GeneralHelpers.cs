@@ -31,6 +31,12 @@ namespace DesafioAutomacaoMantis.Helpers
             //used to read value in sql file
             string text = File.ReadAllText(file);
             return text;
+        }        
+        public static string[] ReadValuesInFile(string file)
+        {
+            //used to read value in sql file
+            string[] text = File.ReadAllLines(file);
+            return text;
         }
 
         public static string ReplaceValuesInFile(string text, string currentValue, string newValue)
