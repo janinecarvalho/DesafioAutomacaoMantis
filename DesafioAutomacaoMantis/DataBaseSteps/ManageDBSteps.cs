@@ -52,7 +52,7 @@ namespace DesafioAutomacaoMantis.DataBaseSteps
 
         private static string GetQueryInsertProjeto()
         {
-            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/queryInsertProjeto.sql";
+            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/InsertProjeto.sql";
 
             string query = GeneralHelpers.ReadValueInFile(queryFile);
 
@@ -69,7 +69,7 @@ namespace DesafioAutomacaoMantis.DataBaseSteps
 
         private static string GetQueryInsertCategoriaProjeto()
         {
-            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/queryInsertCategoriaProjeto.sql";
+            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/InsertCategoriaProjeto.sql";
 
             string query = GeneralHelpers.ReadValueInFile(queryFile);
 
@@ -82,7 +82,7 @@ namespace DesafioAutomacaoMantis.DataBaseSteps
 
         private static string GetQueryInsertMarcadorProjeto()
         {
-            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/queryInsertMarcadorProjeto.sql";
+            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/InsertMarcadorProjeto.sql";
 
             string query = GeneralHelpers.ReadValueInFile(queryFile);
 
@@ -99,7 +99,7 @@ namespace DesafioAutomacaoMantis.DataBaseSteps
 
         private static string GetQueryInsertCampoPersonalizadoProjeto()
         {
-            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/queryInsertCampoPersonalizadoProjeto.sql";
+            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/InsertCampoPersonalizadoProjeto.sql";
 
             string query = GeneralHelpers.ReadValueInFile(queryFile);
 
@@ -112,7 +112,7 @@ namespace DesafioAutomacaoMantis.DataBaseSteps
 
         private static string GetQueryInsertPerfilGlobal()
         {
-            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/queryInsertPerfilGlobal.sql";
+            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/InsertPerfilGlobal.sql";
 
             string query = GeneralHelpers.ReadValueInFile(queryFile);
 
@@ -133,7 +133,7 @@ namespace DesafioAutomacaoMantis.DataBaseSteps
 
         private static string GetQueryInsertTableLembrete()
         {
-            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/queryInsertTableLembrete.sql";
+            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/InsertTableLembrete.sql";
 
             string query = GeneralHelpers.ReadValueInFile(queryFile);
 
@@ -150,7 +150,7 @@ namespace DesafioAutomacaoMantis.DataBaseSteps
 
         private static string GetQueryInsertTableLembreteProjeto()
         {
-            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/queryInsertTableLembreteProjeto.sql";
+            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/InsertTableLembreteProjeto.sql";
 
             string query = GeneralHelpers.ReadValueInFile(queryFile);
 
@@ -163,7 +163,7 @@ namespace DesafioAutomacaoMantis.DataBaseSteps
 
         private static string GetQueryInsertVersaoProjeto()
         {
-            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/queryInsertVersaoProjeto.sql";
+            string queryFile = GeneralHelpers.GetProjectPath() + @"Queries/InsertVersaoProjeto.sql";
 
             string query = GeneralHelpers.ReadValueInFile(queryFile);
 
